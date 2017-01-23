@@ -11,7 +11,9 @@ As a hobby I take part in playing [CTF](https://ctftime.org/ctf-wtf/) together w
 
 ### Published Work
 **DeNom: a tool to find problematic nominalizations using NLP**
+
 *by Mathias Landhäußer, Sven J. Körner, Walter F. Tichy, Jan Keim, Jennifer Krisch*
+
 Published in: 2015 IEEE Second International Workshop on Artificial Intelligence for Requirements Engineering (AIRE)
 
 **Abstract:**
