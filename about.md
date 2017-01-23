@@ -9,7 +9,7 @@ I am interested in [Java](https://en.wikipedia.org/wiki/Java_(programming_langua
 
 As a hobby I take part in playing [CTF](https://ctftime.org/ctf-wtf/) together with the teams [KITCTF](https://kitctf.de/) and [Eat, Sleep, Pwn, Repeat](https://twitter.com/EatSleepPwnRpt).
 
-### Published Work
+### Publications
 **DeNom: a tool to find problematic nominalizations using NLP**
 
 *by Mathias Landhäußer, Sven J. Körner, Walter F. Tichy, Jan Keim, Jennifer Krisch*
