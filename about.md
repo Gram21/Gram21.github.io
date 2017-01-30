@@ -9,14 +9,20 @@ I am interested in [Java](https://en.wikipedia.org/wiki/Java_(programming_langua
 
 As a hobby I take part in playing [CTF](https://ctftime.org/ctf-wtf/) together with the teams [KITCTF](https://kitctf.de/) and [Eat, Sleep, Pwn, Repeat](https://twitter.com/EatSleepPwnRpt).
 
-### Publications
-**DeNom: a tool to find problematic nominalizations using NLP**
+### Publications and similar
+**1. DeNom: a tool to find problematic nominalizations using NLP**
 
 *by Mathias Landhäußer, Sven J. Körner, Walter F. Tichy, Jan Keim, Jennifer Krisch*
 
 Published in: 2015 IEEE Second International Workshop on Artificial Intelligence for Requirements Engineering (AIRE)
 
 [https://doi.org/10.1109/AIRE.2015.7337623](https://doi.org/10.1109/AIRE.2015.7337623)
+
+**2. Video about a hands-on training in NLP**
+
+*Task: Create a program to be able to command a robot with natural language*
+
+[Video](https://www.youtube.com/watch?v=Z_vt1-imBUE)
 
 ### Contact me
 

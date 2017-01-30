@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/gramarye
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://janke.im
+  * I am gramarye (https://keybase.io/gramarye) on keybase.
+  * I have a public key with fingerprint FB9F B252 CE26 E15F D826  5E1A FAE1 9D48 87F7 A6CF
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0120f2d0c59d22dedc194a2e51714c8e94d71db0038187fc17cb2705351d4b5dd5640a",
+            "fingerprint": "fb9fb252ce26e15fd8265e1afae19d4887f7a6cf",
+            "host": "keybase.io",
+            "key_id": "fae19d4887f7a6cf",
+            "kid": "01013aefa61258d912d67543cc29bf125228d9fe29fc76733fac174546f78b9dc3580a",
+            "uid": "737609e0d2589d8c8f50fec10378f300",
+            "username": "gramarye"
+        },
+        "service": {
+            "hostname": "janke.im",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1485795277,
+    "expire_in": 157680000,
+    "prev": "a8e61f4e525643290f98f46b18face67f0548611fad8e8571a379adbf77c7332",
+    "seqno": 31,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.62
+Comment: https://keybase.io/crypto
+
+yMNuAnicbZJrUFRlHMaXxSszkDOazJTScsKsAfG8536WVMBSIYiQqwUt5/K+6+Gy
+S7sL7A6Do4IwOlOgkEEhMmVxG3CnsRkakYGdBJEIMgyBjGjMUYPwgxNE5fYuo986
+X86cZ57n9z7//3m/CfTXBfgtz547ULX4xajfcH9dkS6z2jpSSshW1UUYS4k8uPKC
++Sq0O0x5mkoYCRJQJKJUUmFFlaJUqCpAZCQKsoAHjCJAkVF5oMokSQtA4JECeEWm
+eJKlWaAyMquqLMeQEhFBIM1ihrZCm2ZxYCySRSRTLKVAioOARapAcSwEEpIgEFVG
+wChe4hSEg4etdl8Cl5MlO4zUrFjDH6aVev/jf9qbBLQEkcQBihVUEVAqx7MMrSiU
+KCOsURRWEaREpPAcT9NIwt0ZluEQL8iiqtCssNK7aAXH0zxHipBUMUxUBUVALImg
+AkiaFxBNkj6jHdosUgHEbrNNKpBsLkiURRBYLdYU6Fusb5InjlzJkodnKcC5QpvV
+YVWs+Vg97HAU2o2+lMNV6LOVQNn0BGCSNYuKd4gTxdBm16wWwgiwU3FoPiJgBJYX
+WYrnIwjoLNRs0KT5HCzPCSR+fOfAYoyUBMgBxECWwn+GpkQSiQJiOBkIeAOQ4xHJ
+MgIHAJJUAWImkGhelFQZ8byC10QRvpHes1gJIw1wT8mMmXbNbJEcRTY8sKc/a5XO
+L0C3ZrXed7l0Aes3PL1yZ8ef8WZrQfwv6K+GjcvNNck7w9rvpZvKE5m+wak31o5S
+SaMPX2nvCazIGa55obMoBl4Ys82e/+NOxE33j8XtQvh0TnNoVktSm7Su8uNp72LU
+yGelp/x3/31xfvSljKrumBPGxPtjUamdwXOuLy2exPaUrrN9iyd2DZbsR/r6NWmv
+fn9s04VL+snQEP+O7eX9O2f6tk156q5nLcTHp7W66YaB3uWG2YsLqeXeEOHTSvMe
+g4Fb0zwZbL4/31V1OiUn9uCS6wOn7mjw+LWtJ/3htrtEQcc/uV1iVpshavP6ipzH
+fQHvX1+d4t2fkel+c1/eVifdVDtYI9/0Pj90dQfTlvfRi+Ff2S1bqLKHOq94Eq6d
+2hAX1XuLvbWpJH1ovmjASbQ2Th6pDIkMuLEPfDv+w+hvwU7KMzBsCJyum3OfORQU
+dXSp4HTbxLWXo+81Pnhn10/xjxKubHF0dTelxYfOp+9Nf/dPY3VM/1iy9lZu5+Rz
++oW46nPph/S5S0fOk0T8wMSHJcQnq16PvfOaJeHu2PHszRVnRo77ZV+t72kyhAXf
+/vVrLe3fGj7icU3jgbqq+akZqzcyrnJ37bqOHXuTb7sbeyfoK5+HfTeZP/Q7MRM0
+W1vfY2BbMp9t7u476LrkvnxjYxm3QDoHMo7Vzr394PKjjp8rPZ7oyITozJykLn1r
++HY7PbKnhUuOtaX+B+fpxN4=
+=f9Dx
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/gramarye
+
+==================================================================
