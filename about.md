@@ -18,7 +18,7 @@ Published in: 2015 IEEE Second International Workshop on Artificial Intelligence
 
 [https://doi.org/10.1109/AIRE.2015.7337623](https://doi.org/10.1109/AIRE.2015.7337623)
 
-**2. Video: Lab Course: Natural Language Processing in Software Engineering | 2015/2016**
+**2. Video: Lab Course: Natural Language Processing in Software Engineering 2015/2016**
 
 *Task: Create a program to be able to command a robot with natural language*
 
