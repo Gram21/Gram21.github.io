@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 🇩🇪 Hallo Welt!
+title: 🇩🇪 Hallo Welt! Das Netzwerk steht!
 ---
 
 Willkommen auf diesem Blog. Aktuell gibt es hier leider noch nicht viel, aber in Zukunft werde ich einige Beiträge hier veröffentlichen.
