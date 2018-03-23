@@ -4,10 +4,11 @@ title: About
 permalink: /about/
 ---
 
-I am a computer science student at KIT in Karlsruhe, Germany.
-I am interested in [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) and [Rust](https://en.wikipedia.org/wiki/Rust_(programming_language)) programming and general [Natural Language Processing](https://en.wikipedia.org/wiki/Natural_language_processing).
+I am a computer scientist (M.Sc.) from Karlsruhe, Germany.
+I am generally interested in programming, especially in [Java](https://en.wikipedia.org/wiki/Java_(programming_language)), [Kotlin](https://en.wikipedia.org/wiki/Kotlin_(programming_language)) and [Rust](https://en.wikipedia.org/wiki/Rust_(programming_language)).
+I am also generally interested in [Natural Language Processing](https://en.wikipedia.org/wiki/Natural_language_processing).
 
-As a hobby I take part in playing [CTF](https://ctftime.org/ctf-wtf/) together with the teams [KITCTF](https://kitctf.de/) and [Eat, Sleep, Pwn, Repeat](https://twitter.com/EatSleepPwnRpt).
+As a hobby I took part in playing [CTF](https://ctftime.org/ctf-wtf/) together with the teams [KITCTF](https://kitctf.de/) and [Eat, Sleep, Pwn, Repeat](https://twitter.com/EatSleepPwnRpt).
 
 ### Publications and similar
 **1. DeNom: a tool to find problematic nominalizations using NLP**
