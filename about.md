@@ -21,4 +21,4 @@ As a hobby I took part in playing [CTF](https://ctftime.org/ctf-wtf/) together w
 
 ### Contact me
 
-[jan.keim@protonmail.com](mailto:jan.keim@protonmail.com)
+[mail@janke.im](mailto:mail@janke.im)
