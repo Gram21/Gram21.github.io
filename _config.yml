@@ -13,13 +13,13 @@ primarylinks:
    url: mailto:mail@janke.im
  - title: GitHub
    url: https://github.com/Gram21
-- title: Twitter
+ - title: Twitter
    url: https://twitter.com/_Gramy_
-- title: ORCID
+ - title: ORCID
    url: https://orcid.org/0000-0002-8899-7081
-- title: Google Scholar
+ - title: Google Scholar
    url: https://scholar.google.com/citations?user=fC9DrioAAAAJ
-- title: Publications
+ - title: Publications
    url: https://are.ipd.kit.edu/people/jan-keim/publications/
 
 
@@ -110,6 +110,6 @@ intro: |
 
 #An additional info freetext section is optional at the bottom of the page - can be text or HTML
 additionalinfo: |
-   <strong>Java</strong>: I am experienced in a variety of Java API’s and frameworks. Additionally, I worked with the <strong>Eclipse</strong> RCP and Maven Tycho. <br/><br/>
-   <strong>EMF/Ecore</strong>: In my research, I also worked a lot with EMF/Ecore and similar MDSD tools. <br/><br/>
-   <strong>Rust</strong>: I did some Rust and have most basic knowledge. However, I would not call me an expert or really advanced developer.
+  <strong>Java</strong>: I am experienced in a variety of Java API’s and frameworks. Additionally, I worked with the <strong>Eclipse</strong> RCP and Maven Tycho. <br/><br/>
+  <strong>EMF/Ecore</strong>: In my research, I also worked a lot with EMF/Ecore and similar MDSD tools. <br/><br/>
+  <strong>Rust</strong>: I did some Rust and have most basic knowledge. However, I would not call me an expert or really advanced developer.
