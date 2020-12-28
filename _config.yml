@@ -84,11 +84,12 @@ education:
 
 #List of interesting Github repo/projects to include - optional
 github:
- - Gram21/GPUSorting
- - tobhey/NoRBERT
- - ArDoCo/ArDoCo
+ - gram21/gpusorting
+ - gram21/bert4dat
+ - tobhey/norbert
+ - ardoco/ardoco
  - kit-sdq/Ecore2OWL
- - Gram21/pasters
+ - gram21/pasters
 
 #Stackoverflow flair is optional
 # stackoverflow:
