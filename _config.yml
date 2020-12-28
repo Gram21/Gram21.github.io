@@ -95,7 +95,7 @@ github:
 #    flairimageurl:
 
 intro: |
-  <img src="img/gravatar.jpeg" style="float:left"/>
+  <img src="img/gravatar.jpeg" style="float:right" width="90" height="90" />
   I am a computer scientist (M.Sc.) from Karlsruhe, Germany. I am generally interested in programming, especially in Java, Python, and Rust.
   I am also a Researcher at KIT in the domain of Software Architecture Documentation and Natural Language Programming (NLP).
   At my job, I am also resposible for teaching students in different areas around Programming, Software Engineering, and Research. You can find more on <a href="https://are.ipd.kit.edu/people/jan-keim/">my institute page</a>.
