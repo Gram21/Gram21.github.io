@@ -1,88 +1,115 @@
-#
-# This file contains configuration flags to customize your site
-#
-
-# Name of your site (displayed in the header)
-name: Jan Keim
+# Site settings
 title: Jan Keim
+twitter_username: _Gramy_
+name: Jan Keim
 
-# Short bio or description (displayed in the header)
-description: Computer Scientist from Karlsruhe, Germany
+# Build settings
+markdown: kramdown
 
-# URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://avatars1.githubusercontent.com/u/7968938
-
-#
-# Flags below are optional
-#
-
-# Includes an icon in the footer for each username you enter
-footer-links:
-  dribbble:
-  email: mail@janke.im
-  facebook:
-  flickr:
-  github: Gram21
-  instagram:
-  linkedin:
-  pinterest:
-  rss: # just type anything here for a working RSS icon
-  twitter: _Gramy_
-  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-  youtube: # channel/<your_long_string> or user/<user-name>
-  googleplus: # anything in your profile username that comes after plus.google.com/
-  keybase: gramarye
+#User specific content
+#Links that will appear in the navbar
+primarylinks:
+ - title: Mail
+   url: mailto:mail@janke.im
+ - title: GitHub
+   url: https://github.com/Gram21
+- title: Twitter
+   url: https://twitter.com/_Gramy_
+- title: ORCID
+   url: https://orcid.org/0000-0002-8899-7081
+- title: Google Scholar
+   url: https://scholar.google.com/citations?user=fC9DrioAAAAJ
+- title: Publications
+   url: https://are.ipd.kit.edu/people/jan-keim/publications/
 
 
-# Enter your Disqus shortname (not your username) to enable commenting on posts
-# You can find your shortname on the Settings page of your Disqus account
-disqus: jankeim
+#Any buzzword skills you want to include
+skills:
+ - Software Architecture
+ - Software Architecture Documentation
+ - Natural Language Processing
+ - Machine learning
+ - Ontologies
+ - Teaching
+ - Java
+ - EMF/Ecore
+ - Python
+ - Rust
 
-# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics:
+#Work experience is required
+roles:
+ - title: CTO
+   start: 2017
+   end: Ongoing
+   employer: Basement Crowd
+   description: Legaltech startup producing a range of innovative legal products. Products include <a href="https://www.juriosity.com" taget="_blank">Juriosity</a>, <a href="https://www.fromcounsel.com" taget="_blank">FromCounsel</a>, <a href="https://www.sparqa.com" taget="_blank">Sparqa</a>.
+ - title: Senior Engineer
+   start: 2016
+   end: 2017
+   employer: Emerald Street Ventures
+   description: Emerald Street Ventures was established as an incubator vehicle for the development of a number of software and legal-tech projects, and a rapidly growing, London-based start-up using innovative technologies to revolutionise and change the software and legal-tech landscape. Working with a range of cutting edge technologies and techniques including Scala, Cassandra, CoreOS, a variety of Machine Learning techniques.
+ - title: Senior Engineer
+   start: 2012
+   end: 2016
+   employer: Covestor
+   description: Covestor is an investment marketplace startup that was successfully acquired by Interactive Brokers in 2015. <br/> Working as a senior engineer, I worked closely with the CTO and across the full-stack, I was involved in all aspects of the technology including the website and back-end services.
+ - title: Associate Manager
+   start: 2005
+   end: 2012
+   employer: Accenture
+   description: Working on a range of functional and technical roles, primarily working on client sites in Financial Services in London and Europe.
 
-# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
-# Used for Sitemap.xml and your RSS feed
-url: janke.im
+#Education is required
+education:
+ - level: Master of Science (M.Sc.)
+   date: 2018
+   subject: Computer Science
+   school: Karlsruhe Institute of Technology
+ - level: Bachelor of Science (B.Sc.)
+   date: 2015
+   subject: Computer Science
+   school: Karlsruhe Institute of Technology
 
-# If you're hosting your site at a Project repository on GitHub pages
-# (http://yourusername.github.io/repository-name)
-# and NOT your User repository (http://yourusername.github.io)
-# then add in the baseurl here, like this: "/repository-name"
-baseurl: ""
+#This section is optional (as is the image link below)
+# coursera:
+#    profileurl:
+#    courses:
+#     - title:
+#       link:
+#       optionalimage:
+#       date:
 
-#
-# !! You don't need to change any of the configuration flags below !!
-#
 
-permalink: /:title/
+#This section is optional - embeds slideshows from speakerdeck
+# to get the speakerdeck ID copy the embed code and look for the data-it attribute
+# speakerdeck:
+#    profileurl:
+#    talks:
+#     - title:
+#       speakerdeckId:
+#       conference:
 
-# The release of Jekyll Now that you're using
-version: v1.2.0
 
-# Jekyll 3 now only supports Kramdown for Markdown
-kramdown:
-  # Use GitHub flavored markdown, including triple backtick fenced code blocks
-  input: GFM
-  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    # Use existing pygments syntax highlighting css
-    css_class: 'highlight'
+#List of interesting Github repo/projects to include - optional
+github:
+ - Gram21/GPUSorting
+ - tobhey/NoRBERT
+ - ArDoCo/ArDoCo
+ - kit-sdq/Ecore2OWL
+ - Gram21/pasters
 
-# Set the Sass partials directory, as we're using @imports
-sass:
-  style: :expanded # You might prefer to minify using :compressed
+#Stackoverflow flair is optional
+# stackoverflow:
+#    profileurl:
+#    flairimageurl:
 
-# Use the following plug-ins
-plugins:
-  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
-  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+intro: |
+  I am a computer scientist (M.Sc.) from Karlsruhe, Germany. I am generally interested in programming, especially in Java, Python, and Rust.
+  I am also a Researcher at KIT in the domain of Software Architecture Documentation and Natural Language Programming (NLP).
+  At my job, I am also resposible for teaching students in different areas around Programming, Software Engineering, and Research. You can find more on <a href="https://are.ipd.kit.edu/people/jan-keim/">my institute page</a>.
 
-# Exclude these files from your production _site
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README.md
-  - CNAME
+#An additional info freetext section is optional at the bottom of the page - can be text or HTML
+additionalinfo: |
+   <strong>Java</strong>: I am experienced in a variety of Java API’s and frameworks. Additionally, I worked with the <strong>Eclipse</strong> RCP and Maven Tycho. <br/><br/>
+   <strong>EMF/Ecore</strong>: In my research, I also worked a lot with EMF/Ecore and similar MDSD tools. <br/><br/>
+   <strong>Rust</strong>: I did some Rust and have most basic knowledge. However, I would not call me an expert or really advanced developer.
