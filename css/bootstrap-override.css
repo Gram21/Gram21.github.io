@@ -17,6 +17,13 @@
 	box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
 }
 
+.col-md-9 {
+	width: 100%;
+}
+.col-md-3 {
+	width: 0%;
+}
+
 /** skills labels  **/
 .label-padded {
 	padding: 5px;
