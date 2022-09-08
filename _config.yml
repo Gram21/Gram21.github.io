@@ -16,7 +16,7 @@ primarylinks:
  - title: Twitter
    url: https://twitter.com/_Gramy_
  - title: Publications
-   url: https://are.ipd.kit.edu/people/jan-keim/publications/
+   url: https://mcse.kastel.kit.edu/staff_Keim_Jan.php?tab=%5B195%5D#tabpanel-195
  - title: ORCID
    url: https://orcid.org/0000-0002-8899-7081
  - title: Google Scholar
@@ -87,9 +87,9 @@ github:
  - Gram21/BERT4DAT
  - tobhey/NoRBERT
  - Gram21/GPUSorting
- - Gram21/pasters
+ - ArDoCo/Core
  - kit-sdq/Ecore2OWL
- - InFormALin/Ontology-Connector
+ - InFormALin/Framework
 
 #Stackoverflow flair is optional
 # stackoverflow:
