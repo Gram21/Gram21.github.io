@@ -1,0 +1,27 @@
+"Koziolek":
+  - firstname: ["Anne", "A"]
+    url: https://mcse.kastel.kit.edu/staff_Koziolek_Anne.php
+
+"Tichy":
+  - firstname: ["Walter F.", "W. F."]
+    url: https://en.wikipedia.org/wiki/Walter_F._Tichy
+
+"Hey":
+  - firstname: ["Tobias", "T."]
+    url: https://scholar.google.com/citations?user=0qk6IeYAAAAJ&hl=de
+
+"Corallo":
+  - firstname: ["Sophie", "S."]
+    url: https://mcse.kastel.kit.edu/staff_sophie_schulz.php
+
+"Fuchß":
+  - firstname: ["Dominik", "D."]
+    url: https://mcse.kastel.kit.edu/staff_dominik_fuchss.php
+
+"Weigelt":
+  - firstname: ["Sebastian", "D."]
+    url: https://scholar.google.com/citations?hl=de&user=6bSzr5gAAAAJ
+
+"Reussner":
+  - firstname: ["Ralf", "Ralf H."]
+    url: https://dsis.kastel.kit.edu/staff_ralf_reussner.php
