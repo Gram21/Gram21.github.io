@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Rule of AI: Hard problems are easy. Easy problems are hard.
+subtitle: "The Rule of AI: Hard problems are easy. Easy problems are hard."
 
 profile:
   align: right
