@@ -71,7 +71,7 @@ github_username: Gram21 # your GitHub user name
 gitlab_username: # your GitLab user name
 twitter_username: _Gramy_ # your Twitter handle
 mastodon_username: # your mastodon instance+username in the format instance.tld/@username
-linkedin_username: # your LinkedIn user name
+linkedin_username: jankeim # your LinkedIn user name
 telegram_username: # your Telegram user name
 scholar_userid: fC9DrioAAAAJ # your Google Scholar ID
 semanticscholar_id: # your Semantic Scholar ID
@@ -80,9 +80,9 @@ orcid_id: 0000-0002-8899-7081 # your ORCID ID
 medium_username: # your Medium username
 quora_username: # your Quora username
 publons_id: # your ID on Publons
-research_gate_profile: # your profile on ResearchGate
+research_gate_profile: Jan-Keim # your profile on ResearchGate
 blogger_url: # your blogger URL
-work_url: # work page URL
+work_url: https://mcse.kastel.kit.edu/staff_Keim_Jan.php # work page URL
 keybase_username: # your keybase user name
 wikidata_id: # your wikidata id
 dblp_url: https://dblp.uni-trier.de/pid/172/4597.html # your DBLP profile url
