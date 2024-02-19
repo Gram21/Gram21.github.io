@@ -10,6 +10,10 @@
   - firstname: ["Tobias", "T."]
     url: https://orcid.org/0000-0003-0381-1020
 
+"Schulz":
+  - firstname: ["Sophie", "S."]
+    url: https://orcid.org/0000-0002-1531-2977
+
 "Corallo":
   - firstname: ["Sophie", "S."]
     url: https://orcid.org/0000-0002-1531-2977
