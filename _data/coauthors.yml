@@ -1,6 +1,6 @@
 "Koziolek":
   - firstname: ["Anne", "A"]
-    url: https://mcse.kastel.kit.edu/staff_Koziolek_Anne.php
+    url: https://orcid.org/0000-0002-1593-3394
 
 "Tichy":
   - firstname: ["Walter F.", "W. F."]
@@ -8,15 +8,15 @@
 
 "Hey":
   - firstname: ["Tobias", "T."]
-    url: https://scholar.google.com/citations?user=0qk6IeYAAAAJ&hl=de
+    url: https://orcid.org/0000-0003-0381-1020
 
 "Corallo":
   - firstname: ["Sophie", "S."]
-    url: https://mcse.kastel.kit.edu/staff_sophie_schulz.php
+    url: https://orcid.org/0000-0002-1531-2977
 
 "Fuchß":
   - firstname: ["Dominik", "D."]
-    url: https://mcse.kastel.kit.edu/staff_dominik_fuchss.php
+    url: https://orcid.org/0000-0001-6410-6769
 
 "Weigelt":
   - firstname: ["Sebastian", "D."]
@@ -24,4 +24,12 @@
 
 "Reussner":
   - firstname: ["Ralf", "Ralf H."]
-    url: https://dsis.kastel.kit.edu/staff_ralf_reussner.php
+    url: https://orcid.org/0000-0002-9308-6290
+
+"Kaplan":
+  - firstname: ["Angelika", "A."]
+    url: https://dsis.kastel.kit.edu/staff_angelika_kaplan.php
+
+"Kirschner":
+  - firstname: ["Yves", "Y."]
+    url: https://orcid.org/0000-0002-9011-2510
