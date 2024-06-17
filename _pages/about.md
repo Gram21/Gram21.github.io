@@ -2,22 +2,24 @@
 layout: about
 title: about
 permalink: /
-subtitle: "The Rule of AI: Hard problems are easy. Easy problems are hard."
+subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
-  address:
+  more_info: >
+    <p>555 your office number</p>
+    <p>123 your address street</p>
+    <p>Your City, State 12345</p>
 
-news: false  # includes a list of news items
-selected_papers: false # includes a list of papers marked as "selected={true}"
-social: true  # includes social icons at the bottom of the page
+news: true # includes a list of news items
+selected_papers: true # includes a list of papers marked as "selected={true}"
+social: true # includes social icons at the bottom of the page
 ---
 
-I am a computer scientist (M.Sc.) from Karlsruhe, Germany. I am generally interested in programming, especially in Java, Python, and Rust.
-I am also a [Researcher at KIT](https://mcse.kastel.kit.edu/staff_Keim_Jan.php) for Software Engineering.
-I am researching in the domain of Software Architecture Documentation and Natural Language Processing (NLP) with focus on Traceability Link Recovery and  Inconsistency Detection combining various techniques such as NLP, Information Retrieval, and Artificial Intelligence/Machine Learning, including Large Language Models (LLMs).
-See [ArDoCo](https://mcse.kastel.kit.edu/Projects_ArDoCo.php) for some more details.
+Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
-At my job, I am also resposible for teaching students in different areas around Programming, Software Engineering, and Research. You can find more on [the website of the research group I am working for](https://mcse.kastel.kit.edu/staff_Keim_Jan.php?tab=%5B196%5D#tabpanel-196).
+Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+
+Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
