@@ -1,39 +1,39 @@
-"Koziolek":
-  - firstname: ["Anne", "A"]
+"koziolek":
+  - firstname: ["anne", "a"]
     url: https://orcid.org/0000-0002-1593-3394
 
-"Tichy":
-  - firstname: ["Walter F.", "W. F."]
+"tichy":
+  - firstname: ["walter f.", "w. f."]
     url: https://en.wikipedia.org/wiki/Walter_F._Tichy
 
-"Hey":
-  - firstname: ["Tobias", "T."]
+"hey":
+  - firstname: ["tobias", "t."]
     url: https://orcid.org/0000-0003-0381-1020
 
-"Schulz":
-  - firstname: ["Sophie", "S."]
+"schulz":
+  - firstname: ["sophie", "s."]
     url: https://orcid.org/0000-0002-1531-2977
 
-"Corallo":
-  - firstname: ["Sophie", "S."]
+"corallo":
+  - firstname: ["sophie", "s."]
     url: https://orcid.org/0000-0002-1531-2977
 
-"Fuchß":
-  - firstname: ["Dominik", "D."]
+"fuchß":
+  - firstname: ["dominik", "d."]
     url: https://orcid.org/0000-0001-6410-6769
 
-"Weigelt":
-  - firstname: ["Sebastian", "D."]
+"weigelt":
+  - firstname: ["sebastian", "d."]
     url: https://scholar.google.com/citations?hl=de&user=6bSzr5gAAAAJ
 
-"Reussner":
-  - firstname: ["Ralf", "Ralf H."]
+"reussner":
+  - firstname: ["ralf", "Ralf H."]
     url: https://orcid.org/0000-0002-9308-6290
 
-"Kaplan":
-  - firstname: ["Angelika", "A."]
+"kaplan":
+  - firstname: ["angelika", "A."]
     url: https://dsis.kastel.kit.edu/staff_angelika_kaplan.php
 
-"Kirschner":
-  - firstname: ["Yves", "Yves R.", "Y."]
+"kirschner":
+  - firstname: ["yves", "yves r.", "y."]
     url: https://orcid.org/0000-0002-9011-2510
