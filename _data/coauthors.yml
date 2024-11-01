@@ -1,4 +1,3 @@
-
 "koziolek":
   - firstname: ["Anne", "A", "A."]
     url: https://orcid.org/0000-0002-1593-3394
@@ -8,11 +7,11 @@
 "hey":
   - firstname: ["Tobias", "T."]
     url: https://orcid.org/0000-0003-0381-1020
-"fuchß":
+"fuchss":
   - firstname: ["Dominik", "D."]
     url: https://orcid.org/0000-0001-6410-6769
 "tichy":
-  - firstname: ["Walter F.", "W. F."]
+  - firstname: ["Walter F.", "Walter F", "W. F."]
     url: https://orcid.org/0000-0002-1288-454X
 "schulz":
   - firstname: ["Sophie", "S."]
@@ -29,6 +28,10 @@
 "kirschner":
   - firstname: ["Yves", "Yves R.", "Y."]
     url: https://orcid.org/0000-0002-9011-2510
+"schneider":
+  - firstname: ["Yves", "Yves R.", "Y."]
+    url: https://orcid.org/0000-0002-9011-2510
 "weigelt":
   - firstname: ["Sebastian", "S."]
     url: https://scholar.google.com/citations?hl=de&user=6bSzr5gAAAAJ
+
