@@ -17,7 +17,7 @@ Sie ist gehaltvoll, aber auch saumäßig lecker.
 #### Zutaten:
 - 150g Reis
 - 150g Mayonaise
-- 1,5 EL Sohasoße
+- 1,5 EL Sojasoße
 - 1 EL Zucker
 - 1 Zwiebel
 - Salz
@@ -48,8 +48,8 @@ In my opinion, rice salad should never be missing from any party, especially thi
 - 200g cooked ham
 - 1 can of mandarins
 
-Cook the rice and let it cool down a bit.  
-Then, mix all the ingredients together.  
+Cook the rice and let it cool down a bit.
+Then, mix all the ingredients together.
 It's best to let the salad sit for a while, so ideally, prepare it half a day to a full day in advance.
 
 Enjoy your rice salad at the next party!
