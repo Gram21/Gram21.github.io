@@ -10,7 +10,7 @@ I first start with the [German](#german) version, followed by a translation into
 ## German
 
 Meiner Meinung nach darf Reissalat eigentlich auf keiner Party fehlen, vor allem nicht diese Variante.
-Dies hier ist die Vegane Variante des [Reissalats](/blog/2024/10/01/Recipe-Rice-salad/), bei der die Mayo un der Schinken ausgetauscht wurden.
+Dies hier ist die Vegane Variante des [Reissalats](/blog/2024/10/01/recipe-rice-salad/), bei der die Mayo un der Schinken ausgetauscht wurden.
 Sie ist gehaltvoll, aber auch saumäßig lecker.
 
 #### Zutaten:
@@ -51,7 +51,7 @@ Dann den Reissalat genießen.
 
 ## English
 
-In my opinion, a rice salad really should be at every party, especially this version. This is the vegan version of the [rice salad](/blog/2024/10/01/Recipe-Rice-salad/), in which the mayo and ham were replaced. It is filling, but also absolutely delicious.
+In my opinion, a rice salad really should be at every party, especially this version. This is the vegan version of the [rice salad](/blog/2024/10/01/recipe-rice-salad/), in which the mayo and ham were replaced. It is filling, but also absolutely delicious.
 
 #### Ingredients:
 

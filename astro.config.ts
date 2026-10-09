@@ -71,7 +71,7 @@ function legacyPostRedirects(): Record<string, string> {
   const out: Record<string, string> = {};
   for (const name of readdirSync('src/content/posts')) {
     const m = /^(\d{4})-(\d{2})-(\d{2})-(.+)\.md$/.exec(name);
-    if (m) out[`/blog/${m[1]}/${m[4]}/`] = `/blog/${m[1]}/${m[2]}/${m[3]}/${m[4]}/`;
+    if (m) out[`/blog/${m[1]}/${m[4]}/`] = `/blog/${m[1]}/${m[2]}/${m[3]}/${m[4].toLowerCase()}/`;
   }
   return out;
 }

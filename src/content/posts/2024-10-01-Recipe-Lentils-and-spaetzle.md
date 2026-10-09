@@ -13,7 +13,7 @@ Ein klassisches Gericht sind Linsen und Spätzle, das man einfach immer essen ka
 
 #### Zutaten (4 Personen):
 
-- Spätzle (siehe [Spätzlerezept](/blog/2024/10/01/Recipe-Spaetzle/))
+- Spätzle (siehe [Spätzlerezept](/blog/2024/10/01/recipe-spaetzle/))
 - 300g Linsen
 - 30g Fett
 - 50g Mehl
@@ -36,7 +36,7 @@ This comforting combination of lentils, Spätzle, and sausages is perfect for an
 
 #### Ingredients (for 4 people):
 
-- Spätzle (see [Spätzle Recipe](/blog/2024/10/01/Recipe-Spaetzle/))
+- Spätzle (see [Spätzle Recipe](/blog/2024/10/01/recipe-spaetzle/))
 - 300g lentils
 - 30g fat (for frying)
 - 50g flour

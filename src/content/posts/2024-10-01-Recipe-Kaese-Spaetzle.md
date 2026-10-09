@@ -15,7 +15,7 @@ Sahne verwässert alles nur und trübt den Geschmack.
 
 #### Zutaten (4 Personen):
 
-- Spätzle (siehe [Spätzlerezept](/blog/2024/10/01/Recipe-Spaetzle/))
+- Spätzle (siehe [Spätzlerezept](/blog/2024/10/01/recipe-spaetzle/))
 - 150-200g Reibekäse
 - 1 große Zwiebel
 - etwas Fett
@@ -37,7 +37,7 @@ A classic variation of Spätzle is Käsespätzle. It’s important not to use cr
 
 #### Ingredients (for 4 people):
 
-- Spätzle (see [Spätzle Recipe](/blog/2024/10/01/Recipe-Spaetzle/))
+- Spätzle (see [Spätzle Recipe](/blog/2024/10/01/recipe-spaetzle/))
 - 150-200g grated cheese
 - 1 large onion
 - some fat (for frying)
