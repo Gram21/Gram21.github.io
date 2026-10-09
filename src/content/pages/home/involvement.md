@@ -3,6 +3,7 @@
 # trailing phrase renders as fainter follow-up text.
 ---
 
-- Advocate before the [Roman courts](https://www.perseus.tufts.edu/) _from 81 BC, including the defence of Sextus Roscius_
-- Member of the [Senate](https://www.perseus.tufts.edu/) _and, in 63 BC, consul_
-- Correspondent of [Atticus](https://en.wikipedia.org/wiki/Titus_Pomponius_Atticus)
+- Speaker of the GI working group [Artificial Intelligence for Software Architecture (AI4SA)](https://ak-ai4sa.gi.de/) _together with Mohamed Soliman_
+- Lecturer at the [HECTOR School](https://www.hectorschool.kit.edu/) of KIT
+- Local organizer of the German Software Engineering conference SE 2025 _in Karlsruhe_
+- Local organizer of [INFORMATIK 2020](https://informatik2020.gi.de/) _the annual conference of the German Informatics Society (GI)_
