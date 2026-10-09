@@ -1,5 +1,5 @@
 {
-  "fetched": "2026-10-09T09:05:39.730Z",
+  "fetched": "2026-10-09T09:15:33.081Z",
   "users": {
     "Gram21": {
       "login": "Gram21",
@@ -36,7 +36,7 @@
     },
     "Gram21/BERT4DAT": {
       "fullName": "Gram21/BERT4DAT",
-      "description": "Supplementary Material for the ECSA2020 paper \"Does BERT Understand Code? -- An Exploratory Study on the Detection of Architectural Tactics in Code\" by Keim et al.",
+      "description": "Supplementary Material for the first LLM-paper in software architecture conferences (ICSA/ECSA), the ECSA2020 paper \"Does BERT Understand Code? -- An Exploratory Study on the Detection of Architectural Tactics in Code\" by Keim et al.",
       "stars": 1,
       "forks": 0,
       "language": "Jupyter Notebook",
