@@ -26,7 +26,7 @@ export const SITE = {
   /** Formats every date and number; toLocaleString()'s default drifts between machines. */
   locale: 'en-US',
 
-  email: 'mail@janke.im',
+  email: 'contact@janke.im',
 
   /** The project hero's GitHub button, and the footer credit's link. */
   repo: 'https://github.com/dfuchss/astro-studia',

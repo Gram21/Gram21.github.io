@@ -6,11 +6,11 @@
 # Chips under "What I work on".
 interests:
   - 'Software architecture documentation'
-  - 'Natural language processing'
   - 'Traceability link recovery'
-  - 'Inconsistency detection'
-  - 'Large language models'
-  - 'Teaching'
+  - 'Natural language processing'
+  - 'LLMs and retrieval-augmented generation'
+  - 'Knowledge graphs'
+  - 'Responsible and sustainable AI'
 # Under a section's heading.
 intros:
   papers: 'Some works get a page of their own.'
@@ -24,8 +24,13 @@ more:
 
 _The Rule of AI: Hard problems are easy. Easy problems are hard._
 
-I am a computer scientist (M.Sc.) from Karlsruhe, Germany. I am generally interested in programming, especially in Java, Python, and Rust.
-I am researching in the domain of Software Architecture Documentation and Natural Language Processing (NLP) with focus on Traceability Link Recovery and Inconsistency Detection combining various techniques such as NLP, Information Retrieval, and Artificial Intelligence/Machine Learning, including Large Language Models (LLMs).
-See [ArDoCo](https://mcse.kastel.kit.edu/Projects_ArDoCo.php) for some more details.
+I am a computer scientist (Dr.-Ing.) from Karlsruhe, Germany.
+I earned my doctorate at KIT with the dissertation "Recovering Trace Links in Software Architecture Documentation".
+I am generally interested in programming, especially in Java, Python, and Rust.
 
-At my job, I am also responsible for teaching students in different areas around Programming, Software Engineering, and Research. You can find more on [the website of the research group I am working for](https://mcse.kastel.kit.edu/staff_Keim_Jan.php?tab=%5B196%5D#tabpanel-196).
+My research lies at the intersection of software engineering, natural language processing (NLP), and software architecture.
+I work on traceability link recovery and inconsistency detection between architecture documentation, models, requirements, and code.
+Currently, I focus on Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG), for example for architecture entity recognition, generic traceability link recovery, and architectural knowledge management.
+See [ArDoCo](https://ardoco.de) for more details.
+
+I also teach at KIT, for example Natural Language Processing and Software Engineering, Practical Software Engineering, and Programming. You can find more on [the website of the research group I am working for](https://mcse.kastel.kit.edu/staff_Keim_Jan.php?tab=%5B196%5D#tabpanel-196).

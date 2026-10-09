@@ -27,8 +27,6 @@ extra:
     url: https://www.researchgate.net/profile/Jan-Keim
   - label: KIT
     url: https://mcse.kastel.kit.edu/staff_Keim_Jan.php
-  - label: X
-    url: https://x.com/_Gramy_
 
 # Your PGP key fingerprint, no spaces. When set, /pgp-key/ renders it and
 # SocialRow links there; when null, both quietly stand down. The exported public

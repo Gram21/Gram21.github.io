@@ -11,5 +11,5 @@ brand: 'Jan Keim'
 brandPrompt: '~/'
 # The meta description of a page that sets none (the entry page), and the
 # feed's description.
-description: 'Jan Keim, researcher at KIT working on software architecture documentation, natural language processing, traceability link recovery and inconsistency detection.'
+description: 'Jan Keim, researcher and lecturer at KIT working on software architecture documentation, traceability link recovery, natural language processing, and LLMs.'
 ---
