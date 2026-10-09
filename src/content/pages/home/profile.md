@@ -29,6 +29,6 @@ I am generally interested in programming, especially in Java, Python, and Rust.
 My research lies at the intersection of software engineering, natural language processing (NLP), and software architecture.
 I work on traceability link recovery and inconsistency detection between architecture documentation, models, requirements, and code.
 Currently, I focus on Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG), for example for architecture entity recognition, generic traceability link recovery, and architectural knowledge management.
-See [ArDoCo](https://ardoco.de) for more details.
+See [ARDoCo](https://ardoco.de) for more details.
 
 I also teach at KIT, for example Natural Language Processing and Software Engineering, Practical Software Engineering, and Programming. You can find more on [the website of the research group I am working for](https://mcse.kastel.kit.edu/staff_Keim_Jan.php?tab=%5B196%5D#tabpanel-196).
