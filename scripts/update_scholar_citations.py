@@ -17,7 +17,7 @@ point it at your profile; with that unset the script exits and says so.
 import os
 import signal
 import sys
-from datetime import datetime
+from datetime import date, datetime
 
 try:
     import yaml
@@ -41,6 +41,11 @@ class ScholarUnavailable(Exception):
 # Keep this below the workflow's own `timeout` so the script, not SIGKILL, ends
 # the run: Scholar rate-limits hard, and a run that cannot finish is routine.
 TIME_BUDGET_SECONDS: int = int(os.environ.get("SCHOLAR_TIME_BUDGET", "270"))
+
+# Skip the fetch while the committed data is younger than this. A daily schedule
+# with 7 here refreshes weekly, and a rate-limited run leaves the data stale, so
+# the next day simply tries again: at most one Scholar visit per day.
+MIN_AGE_DAYS: int = int(os.environ.get("SCHOLAR_MIN_AGE_DAYS", "1"))
 
 
 def load_scholar_user_id() -> str:
@@ -93,8 +98,13 @@ def get_scholar_citations() -> None:
                     print(
                         f"Last updated on: {existing_data['metadata']['last_updated']}"
                     )
-                    if existing_data["metadata"]["last_updated"] == today:
-                        print("Citations data is already up-to-date. Skipping fetch.")
+                    last = date.fromisoformat(
+                        str(existing_data["metadata"]["last_updated"])
+                    )
+                    if (date.fromisoformat(today) - last).days < MIN_AGE_DAYS:
+                        print(
+                            f"Citations data is younger than {MIN_AGE_DAYS} day(s). Skipping fetch."
+                        )
                         return
         except Exception as e:
             print(
@@ -107,7 +117,9 @@ def get_scholar_citations() -> None:
     scholarly.set_retries(3)
     try:
         author = scholarly.search_author_id(SCHOLAR_USER_ID)
-        author_data = scholarly.fill(author)
+        # Only the publication list: it carries every count, and each further
+        # section is another request for Scholar to rate-limit.
+        author_data = scholarly.fill(author, sections=["publications"])
     except ScholarUnavailable:
         raise
     except Exception as e:
@@ -154,10 +166,6 @@ def get_scholar_citations() -> None:
             print(
                 f"Error processing publication '{pub.get('bib', {}).get('title', 'Unknown')}': {e}. This publication will be skipped."
             )
-
-    if existing_data and existing_data.get("papers") == citation_data["papers"]:
-        print("No changes in citation data. Skipping file update.")
-        return
 
     # Past the network work: no alarm may interrupt a half-written file.
     signal.alarm(0)

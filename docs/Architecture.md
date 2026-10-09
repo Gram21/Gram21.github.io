@@ -381,14 +381,11 @@ rate-limit — and makes a build from six months ago produce the same page. The 
 is that the numbers are as fresh as the last run, which for a citation count is the
 right trade.
 
-Two workflows refresh them and commit the result. `update-citations.yml` runs on
-demand only; `update-github-metadata.yml` also runs on a push touching
-`src/data/repositories.yml`, so it needs its token from the first repository you
-add there. Both need a classic PAT rather than the built-in `GITHUB_TOKEN` — a
-push made with that token triggers no other workflow, so the data would land and
-the site would never rebuild — and both **fail loudly** when the PAT is absent
-rather than falling back, because the failure that matters here is a green job
-whose result silently never ships. See
+Two workflows refresh them and commit the result. `update-citations.yml` runs
+daily and fetches once the data is a week old; `update-github-metadata.yml` runs
+on demand and on a push touching `src/data/repositories.yml`. Both use the
+built-in `GITHUB_TOKEN`. Its push triggers no other workflow, so each starts
+`deploy.yml` with `gh workflow run` after committing. See
 [Deploying](Deploying.md).
 
 ## CI
@@ -398,7 +395,7 @@ whose result silently never ships. See
 | `deploy.yml`                 | push and PR to `main`, or on demand                                   | install, prettier, `astro check`, `docs:check`, build, audit, then publish `dist/` to `gh-pages` on a non-PR push |
 | `docs.yml`                   | push to `main` touching `docs/**` or the workflow itself, or manually | copies `docs/` into this repository's wiki                                                                        |
 | `update-github-metadata.yml` | manually, or a push touching `repositories.yml`                       | refreshes and commits `github-metadata.json`                                                                      |
-| `update-citations.yml`       | manually                                                              | refreshes and commits `citations.yml`                                                                             |
+| `update-citations.yml`       | daily, or manually                                                    | refreshes and commits `citations.yml` once a week, retrying daily when rate-limited                               |
 
 ## `docs/` and the wiki
 

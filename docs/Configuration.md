@@ -254,9 +254,9 @@ build offline with no network and no token:
 | `citations.yml`        | `scripts/update_scholar_citations.py` | `.github/workflows/update-citations.yml`       |
 | `github-metadata.json` | `scripts/fetch-github-metadata.mjs`   | `.github/workflows/update-github-metadata.yml` |
 
-Both workflows are opt-in and neither ships on a schedule. `update-citations.yml`
-runs on demand only; `update-github-metadata.yml` also triggers on a push to
-`main` touching `src/data/repositories.yml`. Both need a classic `PAT`. See
+`update-citations.yml` runs daily and fetches once the data is a week old.
+`update-github-metadata.yml` runs on demand and on a push to `master` touching
+`src/data/repositories.yml`. Both use the built-in `GITHUB_TOKEN`. See
 [Deploying](Deploying.md).
 
 ### `cv.yml`
