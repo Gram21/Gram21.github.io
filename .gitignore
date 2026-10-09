@@ -11,3 +11,6 @@ __pycache__/
 # Editors / OS
 .DS_Store
 .idea
+
+.claude
+.serena
