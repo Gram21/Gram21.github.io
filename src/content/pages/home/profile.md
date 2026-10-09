@@ -22,8 +22,6 @@ more:
   posts: 'all posts →'
 ---
 
-_The Rule of AI: Hard problems are easy. Easy problems are hard._
-
 I am a computer scientist (Dr.-Ing.) from Karlsruhe, Germany.
 I earned my doctorate at KIT with the dissertation "Recovering Trace Links in Software Architecture Documentation".
 I am generally interested in programming, especially in Java, Python, and Rust.
