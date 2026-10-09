@@ -1,0 +1,16 @@
+# What /repositories/ lists.
+#
+# Nothing is fetched at build time: `npm run data:github` reads this file, calls
+# the GitHub API and writes the committed src/data/github-metadata.json, so the
+# build stays hermetic, offline and token-free. Add a repo, run it, commit both
+# files; .github/workflows/update-github-metadata.yml does it on a schedule.
+
+github_users:
+  - Gram21
+
+github_repos:
+  - Gram21/GPUSorting
+  - tobhey/NoRBERT
+  - Gram21/BERT4DAT
+  - kit-sdq/Ecore2OWL
+  - ArDoCo/Core

@@ -1,0 +1,287 @@
+metadata:
+  last_updated: '2026-10-09'
+papers:
+  fC9DrioAAAAJ:-f6ydRqryjwC:
+    citations: 46
+    title: 'Software architecture meets llms: A systematic literature review'
+    year: '2025'
+  fC9DrioAAAAJ:0EnyYjriUFMC:
+    citations: 45
+    title: Evaluation methods and replicability of software architecture research objects
+    year: '2022'
+  fC9DrioAAAAJ:2osOgNQ5qMEC:
+    citations: 8
+    title: Towards consistency analysis between formal and informal software architecture artefacts
+    year: '2019'
+  fC9DrioAAAAJ:3fE2CSJIrl8C:
+    citations: 9
+    title: A taxonomy for design decisions in software architecture documentation
+    year: '2022'
+  fC9DrioAAAAJ:4DMP91E08xMC:
+    citations: 9
+    title: Combining Knowledge Graphs and Large Language Models to Ease Knowledge Access in Software Architecture Research.
+    year: '2024'
+  fC9DrioAAAAJ:4JMBOYKVnBMC:
+    citations: 32
+    title: A research roadmap for augmenting software engineering processes and software products with generative AI
+    year: '2026'
+  fC9DrioAAAAJ:4TOpqqG69KYC:
+    citations: 1
+    title: A Taxonomy for Design Decisions
+    year: '2023'
+  fC9DrioAAAAJ:5nxA0vEk-isC:
+    citations: 0
+    title: "2022 IEEE 19th International Conference on Software Architecture (ICSA)| 978-1-6654-1728-0/22/$31.00\xA9 2022 IEEE| DOI: 10.1109/ICSA53651. 2022.00029"
+    year: Unknown Year
+  fC9DrioAAAAJ:7PzlFSSx8tAC:
+    citations: 1
+    title: Dataset of" Knowledge-based Sense Disambiguation of Multiword Expressions in Requirements Documents"
+    year: '2021'
+  fC9DrioAAAAJ:8k81kl-MbHgC:
+    citations: 8
+    title: Replication Package of" Evaluation Methods and Replicability of Software Architecture Research Objects"
+    year: '2022'
+  fC9DrioAAAAJ:9ZlFYXVOiuMC:
+    citations: 42
+    title: Requirements traceability link recovery via retrieval-augmented generation
+    year: '2025'
+  fC9DrioAAAAJ:9yKSN-GCB0IC:
+    citations: 27
+    title: Towards consistency checking between software architecture and informal documentation
+    year: '2019'
+  fC9DrioAAAAJ:BqipwSGYUEgC:
+    citations: 1
+    title: The EVerest Dataset for Secure Software Engineering
+    year: '2026'
+  fC9DrioAAAAJ:GnPB-g6toBAC:
+    citations: 0
+    title: 'The ARDoCo Tool Landscape: REST API, TraceView, and TraceViz for Architecture Traceability'
+    year: '2026'
+  fC9DrioAAAAJ:HDshCWvjkbEC:
+    citations: 9
+    title: 'Beyond retrieval: A study of using llm ensembles for candidate filtering in requirements traceability'
+    year: '2025'
+  fC9DrioAAAAJ:IWHjjKOFINEC:
+    citations: 0
+    title: "2025 IEEE 22nd International Conference on Software Architecture (ICSA)| 979-8-3315-2090-8/25/$31.00\xA9 2025 IEEE| DOI: 10.1109/ICSA65012. 2025.00040"
+    year: Unknown Year
+  fC9DrioAAAAJ:IjCSPb-OGe4C:
+    citations: 0
+    title: Future Research.
+    year: '2019'
+  fC9DrioAAAAJ:JV2RwH3_ST0C:
+    citations: 0
+    title: 'AutoPCM: Automated Generation of Architectural Performance Models from Early Design Artifacts using LLM Agents'
+    year: '2026'
+  fC9DrioAAAAJ:KlAtU1dfN6UC:
+    citations: 21
+    title: Establishing a benchmark dataset for traceability link recovery between software architecture documentation and models
+    year: '2022'
+  fC9DrioAAAAJ:L8Ckcad2t8MC:
+    citations: 0
+    title: Recovering Trace Links In Software Architecture Documentation
+    year: '2025'
+  fC9DrioAAAAJ:LkGwnXOMwfcC:
+    citations: 38
+    title: Tracelink recovery for software architecture documentation
+    year: '2021'
+  fC9DrioAAAAJ:M3NEmzRMIkIC:
+    citations: 2
+    title: Dataset for" Evaluation Methods and Replicability of Software Architecture Research Objects"
+    year: '2022'
+  fC9DrioAAAAJ:M3ejUd6NZC8C:
+    citations: 4
+    title: Automated reverse engineering of the technology-induced software system structure
+    year: '2023'
+  fC9DrioAAAAJ:MXK_kJrjxJIC:
+    citations: 0
+    title: ICSE 2021
+    year: Unknown Year
+  fC9DrioAAAAJ:NMxIlDl6LWMC:
+    citations: 0
+    title: Automated Generation of SysML Activity Diagrams from Industrial Requirements Using LLMs
+    year: '2026'
+  fC9DrioAAAAJ:O3NaXMp0MMsC:
+    citations: 0
+    title: "2026 IEEE 23rd International Conference on Software Architecture (ICSA)| 979-8-3315-5740-9/26/$31.00\xA9 2026 IEEE| DOI: 10.1109/ICSA66085. 2026.00042"
+    year: Unknown Year
+  fC9DrioAAAAJ:QIV2ME_5wuYC:
+    citations: 3
+    title: A classification framework for scientific documents to support knowledge graph population
+    year: '2025'
+  fC9DrioAAAAJ:R3hNpaxXUhUC:
+    citations: 0
+    title: Taming Large Language Models via Scripted Interactions
+    year: '2025'
+  fC9DrioAAAAJ:RHpTSmoSYBkC:
+    citations: 2
+    title: A roadmap for tamed interactions with large language models
+    year: '2026'
+  fC9DrioAAAAJ:TFP_iSt0sucC:
+    citations: 0
+    title: 'ExArch: Enabling Architecture Traceability by LLM-based Architecture Component Name Extraction'
+    year: '2026'
+  fC9DrioAAAAJ:TQgYirikUcIC:
+    citations: 9
+    title: 'LLMs for Software Architecture Knowledge: A Comparative Analysis Among Seven LLMs'
+    year: '2025'
+  fC9DrioAAAAJ:Tyk-4Ss8FVUC:
+    citations: 5
+    title: Unsupervised multi-topic labeling for spoken utterances
+    year: '2019'
+  fC9DrioAAAAJ:ULOm3_A8WrAC:
+    citations: 0
+    title: "Aguilar, Paulo AC 93 Aktouf, Oum-El-Kheir 12 Aldenhoven, C\xE9line Madeleine 117 Aleti, Aldeida 35"
+    year: Unknown Year
+  fC9DrioAAAAJ:UeHWp8X0CEIC:
+    citations: 50
+    title: Managed software evolution
+    year: '2019'
+  fC9DrioAAAAJ:W7OEmFMy1HYC:
+    citations: 0
+    title: Lessons Learned
+    year: '2019'
+  fC9DrioAAAAJ:WF5omc3nYNoC:
+    citations: 27
+    title: "Does BERT Understand Code? \u2013 An Exploratory Study On The Detection Of Architectural Tactics In Code"
+    year: '2020'
+  fC9DrioAAAAJ:Wp0gIr-vW9MC:
+    citations: 30
+    title: Enabling Architecture Traceability by LLM-based Architecture Component Name Extraction
+    year: '2025'
+  fC9DrioAAAAJ:Y0pCki6q_DkC:
+    citations: 2
+    title: Teaching Programming at Scale.
+    year: '2020'
+  fC9DrioAAAAJ:YFjsv_pBGBYC:
+    citations: 1
+    title: On Converting Natural Language Requirements into Semi-Formal Templates Using LLMs
+    year: '2026'
+  fC9DrioAAAAJ:YsMSGLbcyi4C:
+    citations: 11
+    title: Using bert for the detection of architectural tactics in code
+    year: '2020'
+  fC9DrioAAAAJ:ZeXyd9-uunAC:
+    citations: 4
+    title: 'Responsible and Sustainable AI: Considering Energy Consumption in Automated Text Classification Evaluation Tasks'
+    year: '2025'
+  fC9DrioAAAAJ:Zph67rFs4hoC:
+    citations: 25
+    title: Detecting inconsistencies in software architecture documentation using traceability link recovery
+    year: '2023'
+  fC9DrioAAAAJ:_FxGoFyzp5QC:
+    citations: 1
+    title: Towards an Automated Classification Approach for Software Engineering Research
+    year: '2021'
+  fC9DrioAAAAJ:_Qo2XoVZTnwC:
+    citations: 0
+    title: Bericht zum ersten Treffen des Arbeitskreises Artificial Intelligence for Software Architecture
+    year: '2025'
+  fC9DrioAAAAJ:_kc_bZDykSQC:
+    citations: 6
+    title: "Supplementary material of \u201CNoRBERT: transfer learning for requirements classification"
+    year: '2020'
+  fC9DrioAAAAJ:aqlVkmm33-oC:
+    citations: 30
+    title: Requirements classification for traceability link recovery
+    year: '2024'
+  fC9DrioAAAAJ:bEWYMUwI8FkC:
+    citations: 0
+    title: 'Linking Software System Artifacts: Toward Generic Traceability Link Recovery through Retrieval-Augmented Generation'
+    year: '2026'
+  fC9DrioAAAAJ:blknAaTinKkC:
+    citations: 1
+    title: A Community Roadmap for Meta-Research and Knowledge Transfer in Software Engineering
+    year: '2026'
+  fC9DrioAAAAJ:d1gkVwhDpl0C:
+    citations: 2
+    title: "Themenextraktion zur Dom\xE4nenauswahl f\xFCr Programmierung in nat\xFCrlicher Sprache"
+    year: '2018'
+  fC9DrioAAAAJ:dhFuZR0502QC:
+    citations: 31
+    title: 'Do large language models contain software architectural knowledge?: An exploratory case study with gpt'
+    year: '2025'
+  fC9DrioAAAAJ:e5wmG9Sq2KIC:
+    citations: 3
+    title: 'HubLink: A Novel Question Answering Retrieval Approach over Knowledge Graphs.'
+    year: '2025'
+  fC9DrioAAAAJ:eQOLeE2rZwMC:
+    citations: 334
+    title: 'Norbert: Transfer learning for requirements classification'
+    year: '2020'
+  fC9DrioAAAAJ:hC7cP41nSMkC:
+    citations: 2
+    title: Towards Automated Knowledge Management in the Software Life Cycle
+    year: '2025'
+  fC9DrioAAAAJ:hFOr9nPyWt4C:
+    citations: 5
+    title: A formalized classification schema for model consistency
+    year: '2023'
+  fC9DrioAAAAJ:hMod-77fHWUC:
+    citations: 0
+    title: "Allysson Allex Ara\xFAjo 17 Ana Beatriz Mantovani Bett 1 Angelika Kaplan 57, 70"
+    year: Unknown Year
+  fC9DrioAAAAJ:hqOjcs7Dif8C:
+    citations: 34
+    title: Introducing an evaluation method for taxonomies
+    year: '2022'
+  fC9DrioAAAAJ:iH-uZ7U-co4C:
+    citations: 4
+    title: 'From scattered to structured: A vision for automating architectural knowledge management'
+    year: '2026'
+  fC9DrioAAAAJ:isC4tDSrTZIC:
+    citations: 1
+    title: 'Architecture in the Cradle: Early Warning of Architectural Decay with ArchGuard'
+    year: '2026'
+  fC9DrioAAAAJ:j3f4tGmQtD8C:
+    citations: 7
+    title: "Who\u2019s Who? LLM-assisted Software Traceability with Architecture Entity Recognition"
+    year: '2025'
+  fC9DrioAAAAJ:kNdYIx-mwKoC:
+    citations: 0
+    title: "What\u2019s the Matter? Knowledge Acquisition by Unsupervised Multi-Topic Labeling for Spoken Utterances"
+    year: '2020'
+  fC9DrioAAAAJ:k_IJM867U9cC:
+    citations: 3
+    title: 'GARMA: Generative Architectural Resource Demand Estimation for Microservice Applications'
+    year: '2026'
+  fC9DrioAAAAJ:mB3voiENLucC:
+    citations: 0
+    title: Establishing a Benchmark Dataset for Traceability Link Recovery Between
+    year: '2023'
+  fC9DrioAAAAJ:mVmsd5A6BfQC:
+    citations: 67
+    title: 'LiSSA: toward generic traceability link recovery through retrieval-augmented generation'
+    year: '2025'
+  fC9DrioAAAAJ:ns9cj8rnVeAC:
+    citations: 0
+    title: 'Recovering Trace Links In Software Architecture Documentation: The Karlsruhe Series on Software Design and Quality/Ed. by Prof. Dr. Ralf Reussner'
+    year: '2026'
+  fC9DrioAAAAJ:qUcmZB5y_30C:
+    citations: 0
+    title: ICSA 2025
+    year: Unknown Year
+  fC9DrioAAAAJ:qxL8FJ1GzNcC:
+    citations: 34
+    title: Recovering trace links between software documentation and code
+    year: '2024'
+  fC9DrioAAAAJ:r0BpntZqJG4C:
+    citations: 2
+    title: LLM-Assisted Microservice Performance Modeling
+    year: '2025'
+  fC9DrioAAAAJ:roLk4NBRz8UC:
+    citations: 5
+    title: Knowledge-based sense disambiguation of multiword expressions in requirements documents
+    year: '2021'
+  fC9DrioAAAAJ:u-x6o8ySG0sC:
+    citations: 0
+    title: "Identifikation problematischer Substantivierungen in nat\xFCrlichsprachigen Anforderungsdokumenten"
+    year: '2022'
+  fC9DrioAAAAJ:u5HHmVD_uO8C:
+    citations: 12
+    title: 'DeNom: a tool to find problematic nominalizations using NLP'
+    year: '2015'
+  fC9DrioAAAAJ:zYLM7Y9cAGgC:
+    citations: 2
+    title: Introducing Managed Software Evolution
+    year: '2019'

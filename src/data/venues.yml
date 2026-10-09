@@ -1,0 +1,9 @@
+# Venue badges, keyed by the `abbr` field in papers.bib. An abbr with no row here
+# FAILS THE BUILD: content.config.ts declares it as reference('venues'), so a
+# typo is a build error naming the BibTeX key. A paper with no abbr renders
+# without a badge, which is fine.
+#
+# `color` is the venue's own brand hex, pasted as-is: VenueBadge.astro mixes it
+# toward white for the label and toward the page for the fill. Do not pre-lighten.
+
+{}

@@ -1,0 +1,71 @@
+{
+  "fetched": "2026-10-09T08:44:01.756Z",
+  "users": {
+    "Gram21": {
+      "login": "Gram21",
+      "name": "Jan Keim",
+      "bio": "Researcher.\r\nInterested in NLP, LLMs, Ontologies & Knowledge Graphs, Software Architecture, Java, and more.",
+      "followers": 33,
+      "publicRepos": 27,
+      "htmlUrl": "https://github.com/Gram21",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/7968938?v=4"
+    }
+  },
+  "repos": {
+    "Gram21/GPUSorting": {
+      "fullName": "Gram21/GPUSorting",
+      "description": "Implementation of a few sorting algorithms in OpenCL",
+      "stars": 35,
+      "forks": 9,
+      "language": "C++",
+      "license": null,
+      "archived": false,
+      "htmlUrl": "https://github.com/Gram21/GPUSorting",
+      "pushedAt": "2019-12-06T08:17:32Z"
+    },
+    "tobhey/NoRBERT": {
+      "fullName": "tobhey/NoRBERT",
+      "description": "Requirements classification approach using BERT's transfer learning capabilities",
+      "stars": 21,
+      "forks": 11,
+      "language": "Jupyter Notebook",
+      "license": "GPL-3.0",
+      "archived": false,
+      "htmlUrl": "https://github.com/tobhey/NoRBERT",
+      "pushedAt": "2023-09-15T08:20:48Z"
+    },
+    "Gram21/BERT4DAT": {
+      "fullName": "Gram21/BERT4DAT",
+      "description": "Supplementary Material for the ECSA2020 paper \"Does BERT Understand Code? -- An Exploratory Study on the Detection of Architectural Tactics in Code\" by Keim et al.",
+      "stars": 1,
+      "forks": 0,
+      "language": "Jupyter Notebook",
+      "license": "GPL-3.0",
+      "archived": false,
+      "htmlUrl": "https://github.com/Gram21/BERT4DAT",
+      "pushedAt": "2020-07-02T11:48:34Z"
+    },
+    "kit-sdq/Ecore2OWL": {
+      "fullName": "kit-sdq/Ecore2OWL",
+      "description": "Tool to convert Ecore (Meta-)Models into OWL Ontologies.",
+      "stars": 8,
+      "forks": 0,
+      "language": "Java",
+      "license": "EPL-1.0",
+      "archived": false,
+      "htmlUrl": "https://github.com/kit-sdq/Ecore2OWL",
+      "pushedAt": "2024-09-10T09:04:01Z"
+    },
+    "ArDoCo/Core": {
+      "fullName": "ardoco/core",
+      "description": "Archived after v2",
+      "stars": 3,
+      "forks": 9,
+      "language": "Java",
+      "license": "MIT",
+      "archived": true,
+      "htmlUrl": "https://github.com/ardoco/core",
+      "pushedAt": "2026-07-09T10:51:47Z"
+    }
+  }
+}

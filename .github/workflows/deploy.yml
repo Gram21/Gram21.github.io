@@ -1,103 +1,69 @@
-name: Deploy site
+name: Build, audit and deploy
 
 on:
   push:
-    branches:
-      - master
-      - main
-    paths:
-      - "assets/**"
-      - "**.bib"
-      - "**.html"
-      - "**.js"
-      - "**.liquid"
-      - "**/*.md"
-      - "**.yml"
-      - "Gemfile"
-      - "Gemfile.lock"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/broken-links.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
-      - "!lighthouse_results/**"
-      - "!CONTRIBUTING.md"
-      - "!CUSTOMIZE.md"
-      - "!FAQ.md"
-      - "!INSTALL.md"
-      - "!README.md"
+    branches: [master]
   pull_request:
-    branches:
-      - master
-      - main
-    paths:
-      - "assets/**"
-      - "**.bib"
-      - "**.html"
-      - "**.js"
-      - "**.liquid"
-      - "**/*.md"
-      - "**.yml"
-      - "Gemfile"
-      - "Gemfile.lock"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/broken-links.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
-      - "!lighthouse_results/**"
-      - "!CONTRIBUTING.md"
-      - "!CUSTOMIZE.md"
-      - "!FAQ.md"
-      - "!INSTALL.md"
-      - "!README.md"
+    branches: [master]
   workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  deploy:
-    # available images: https://github.com/actions/runner-images#available-images
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v4
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
         with:
-          ruby-version: "3.3"
-          bundler-cache: true
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
-      - name: Update _config.yml ⚙️
-        uses: fjogeleit/yaml-update-action@v0.16.1
-        with:
-          commitChange: false
-          valueFile: "_config.yml"
-          propertyPath: "giscus.repo"
-          value: ${{ github.repository }}
-      - name: Install and Build 🔧
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      # Formatting and type-checking run in this job rather than one of their
+      # own: they need exactly the install that has already happened here.
+      - name: Check formatting
+        run: npx prettier . --check
+
+      - name: Type-check
+        run: npx astro check
+
+      # The flags in src/features.ts and the table in docs/Features.md are both
+      # generated from scripts/features.mjs. This also refuses a flag
+      # combination that cannot build, which `astro check` cannot see: it
+      # type-checks the module without executing it.
+      - name: Check the generated regions are in sync
+        run: npm run docs:check
+
+      # Piped through grep because Astro reports a dangling content reference
+      # with logger.error and then exits 0 — so the exit code on its own would
+      # let a silently blank field ship. Switching a feature off empties its
+      # collection, which is exactly how such a reference comes about.
+      - name: Build
         run: |
-          pip3 install --upgrade jupyter
-          export JEKYLL_ENV=production
-          bundle exec jekyll build
-      - name: Purge unused CSS 🧹
-        run: |
-          npm install -g purgecss
-          purgecss -c purgecss.config.js
-      - name: Deploy 🚀
-        if: github.event_name != 'pull_request'
+          set -o pipefail
+          npm run build 2>&1 | tee "$RUNNER_TEMP/build.log"
+          if grep -qE 'Invalid content reference|does not exist or is empty' "$RUNNER_TEMP/build.log"; then
+            echo "::error::the build logged a content-collection problem above, and still exited 0"
+            exit 1
+          fi
+
+      # Structure, accessibility and the host files Pages needs. Before the
+      # deploy step, so a regression fails the run instead of reaching the site.
+      - name: Audit
+        run: npm run audit
+
+      - name: Deploy to gh-pages
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: _site
+          folder: dist
+          branch: gh-pages
+          clean: true

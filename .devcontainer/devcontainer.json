@@ -1,31 +1,22 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/jekyll
 {
-  "name": "Jekyll",
-  "image": "mcr.microsoft.com/devcontainers/jekyll",
+  "name": "Studia Theme",
 
-  // Features to add to the dev container. More info: https://containers.dev/features.
-  "features": {
-    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
-      "packages": "build-essential,imagemagick,inotify-tools,jupyter-nbconvert,procps,ruby-full,zlib1g-dev"
-    },
-    "ghcr.io/devcontainers-contrib/features/prettier:1": {}
+  // Pinned to the same major as .nvmrc, which CI reads: `npm ci` fails the
+  // engines check on an older Node, and Codespaces' default image does not
+  // guarantee it. An even major, because that is what a Node LTS line is.
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:24",
+
+  "postCreateCommand": "npm ci",
+
+  // The forwarded root redirects to the based URL. docs/Deploying.md.
+  "forwardPorts": [4321],
+  "portsAttributes": {
+    "4321": { "label": "astro dev", "onAutoForward": "notify" }
   },
-
-  // Optionally: run jekyll serve automatically on container entering using the Docker entrypoint
-  "postAttachCommand": "./bin/entry_point.sh",
 
   "customizations": {
     "vscode": {
-      "extensions": ["esbenp.prettier-vscode", "sissel.shopify-liquid", "yzhang.markdown-all-in-one"],
-      "settings": {
-        // use prettier code formatter as default formatter
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "prettier.configPath": ".prettierrc",
-        "editor.formatOnSave": true
-      }
+      "extensions": ["astro-build.astro-vscode", "esbenp.prettier-vscode"]
     }
-  },
-
-  "remoteUser": "vscode"
+  }
 }
