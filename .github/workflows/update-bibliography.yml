@@ -3,8 +3,9 @@
 #
 # Only articles and conference papers are added; reports, theses and teaching
 # material in KITopen stay out. Add the source id to src/data/papers-ignore.yml
-# to keep a record from being proposed again. A new entry may still need an
-# `abbr` by hand: the commit message lists the added keys.
+# to keep a record from being proposed again. A new entry gets an `abbr` when its
+# venue matches a row in src/data/venues.yml; otherwise it has no badge, and you
+# add the venue row and the `abbr` by hand.
 #
 # KITopen unreachable is not a failure: the script exits 2 without touching any
 # file, and the next week's run tries again.

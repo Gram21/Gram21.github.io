@@ -194,6 +194,35 @@ export function loadYaml(path) {
   return existsSync(path) ? (parseYaml(readFileSync(path, 'utf8')) ?? null) : null;
 }
 
+const VENUES_FILE = new URL('../../src/data/venues.yml', import.meta.url);
+
+/* Venue patterns, first match wins; a name here must be a key in venues.yml. */
+const ABBR_RULES = [
+  [/Requirements Engineering Conference Workshops|\(REW\)/, 'REW'],
+  [/Artificial Intelligence for Requirements Engineering/, 'AIRE'],
+  [/Requirements Engineering: Foundation/, 'REFSQ'],
+  [/Requirements Engineering Conference|\(RE\b/, 'RE'],
+  [/Software Architecture Companion/, 'ICSA-C'],
+  [/Mining Software Repositories for Software Architecture/, 'MSR4SA'],
+  [/International Conference on Software Architecture/, 'ICSA'],
+  [/European Conference|ECSA|^Software Architecture$/, 'ECSA'],
+  [/Automated Software Engineering/, 'ASE'],
+  [/Methodological Issues/, 'MIESE'],
+  [/Software Engineering 20\d\d/, 'SE'],
+  [/International Conference on Software Engineering/, 'ICSE'],
+  [/Evaluation and Assessment/, 'EASE'],
+  [/Transactions on Software Engineering and Methodology/, 'TOSEM'],
+  [/Transactions on Autonomous and Adaptive/, 'TAAS'],
+];
+
+/** The badge for an entry: the source's own abbr or one inferred from the venue name, only if venues.yml has it (an unknown abbr fails the site build). */
+export function badgeFor(fields) {
+  const venues = loadYaml(VENUES_FILE) ?? {};
+  const venue = String(fields.booktitle ?? fields.journal ?? '');
+  const inferred = ABBR_RULES.find(([pattern]) => pattern.test(venue))?.[1];
+  return [fields.abbr, inferred].find((abbr) => abbr && abbr in venues);
+}
+
 export function loadIgnoredIds() {
   return new Set((loadYaml(IGNORE_FILE) ?? []).map(String));
 }
@@ -580,6 +609,7 @@ export async function proposeMissingPapers({
     const crossrefMessage = await crossrefMessageFor(publication, delaySeconds);
     const entryType = entryTypeFor(publication, crossrefMessage);
     const fields = buildFields(publication, crossrefMessage, entryType, sourceName);
+    fields.abbr = badgeFor(fields);
     const key = makeKey(
       publication.authors[0],
       publication.title,
