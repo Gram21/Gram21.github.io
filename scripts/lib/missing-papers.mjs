@@ -499,6 +499,20 @@ export function buildFields(publication, crossrefMessage, entryType, source) {
   return Object.fromEntries(Object.entries(fields).filter(([, value]) => value));
 }
 
+/**
+ * Source text is untrusted and is committed unattended: an unbalanced brace in a title
+ * would close the field early and let the rest be read as further fields. Such a value
+ * loses all its braces; a well-formed one passes unchanged.
+ */
+export function balanced(value) {
+  let depth = 0;
+  for (const character of value.replaceAll(/\\[{}]/g, '')) {
+    depth += character === '{' ? 1 : character === '}' ? -1 : 0;
+    if (depth < 0) break;
+  }
+  return depth === 0 && !/\\[{}]/.test(value) ? value : value.replaceAll(/\\?[{}]/g, '');
+}
+
 /** Two-space indent, `=` aligned, leading title/author/abbr, rest alphabetical. */
 export function formatEntry(entryType, key, fields) {
   const names = [
@@ -508,7 +522,7 @@ export function formatEntry(entryType, key, fields) {
       .sort(),
   ];
   const width = Math.max(...names.map((name) => name.length));
-  const lines = names.map((name) => `  ${name.padEnd(width)} = {${fields[name]}}`);
+  const lines = names.map((name) => `  ${name.padEnd(width)} = {${balanced(fields[name])}}`);
   return `@${entryType}{${key},\n${lines.join(',\n')}\n}`;
 }
 
