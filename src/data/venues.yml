@@ -6,7 +6,6 @@
 # `color` is the venue's own brand hex, pasted as-is: VenueBadge.astro mixes it
 # toward white for the label and toward the page for the fill. Do not pre-lighten.
 
-
 AIRE:
   name: International Workshop on Artificial Intelligence for Requirements Engineering
   url: https://conf.researchr.org/series/aire
