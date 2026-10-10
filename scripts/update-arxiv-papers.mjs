@@ -98,7 +98,10 @@ async function publishedRecord(entry, record) {
     if (message) return message;
   }
   const found = await searchCrossref(entry.fields.title.replaceAll(/[{}]/g, ''));
-  return found && !ARXIV_DOI.test(found.DOI ?? '') ? found : null;
+  // A title alone can match another paper: the first author must agree as well.
+  const surname = normalize(entry.fields.author.split(/\s+and\s+/)[0].split(',')[0]);
+  const sameAuthor = found?.author?.some((author) => normalize(author.family ?? '') === surname);
+  return found && sameAuthor && !ARXIV_DOI.test(found.DOI ?? '') ? found : null;
 }
 
 function rewrite(entry, message) {
