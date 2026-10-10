@@ -105,6 +105,27 @@ jobs:
         with:
           name: dependency-update
 
+      # The artifact comes from a job that ran package code, so it is untrusted:
+      # only version strings under dependencies may differ from the repository,
+      # and every lockfile source must be the npm registry.
+      - name: Check the artifact changes nothing but versions
+        run: |
+          node --input-type=module -e '
+            import { readFileSync } from "node:fs";
+            import { execSync } from "node:child_process";
+            const old = JSON.parse(execSync("git show HEAD:package.json").toString());
+            const now = JSON.parse(readFileSync("package.json", "utf8"));
+            for (const group of ["dependencies", "devDependencies"]) {
+              if (Object.keys(old[group] ?? {}).join() !== Object.keys(now[group] ?? {}).join())
+                throw new Error(`${group}: package set changed`);
+              old[group] = now[group] = null;
+            }
+            if (JSON.stringify(old) !== JSON.stringify(now)) throw new Error("package.json changed beyond versions");
+            const lock = readFileSync("package-lock.json", "utf8");
+            const bad = [...lock.matchAll(/"resolved": "([^"]+)"/g)].filter(([, url]) => !url.startsWith("https://registry.npmjs.org/"));
+            if (bad.length) throw new Error(`lockfile source outside the registry: ${bad[0][1]}`);
+          '
+
       - name: Commit and deploy
         run: |
           git config user.name "github-actions[bot]"
