@@ -43,6 +43,12 @@ for (const [path, entry] of Object.entries(lock.packages ?? {})) {
   if (typeof entry.resolved !== 'string' || !entry.resolved.startsWith(REGISTRY)) {
     fail(`package-lock.json: ${path} is not resolved from the npm registry`);
   }
+  // The tarball must belong to the package the lockfile names: the last
+  // node_modules segment is the name, the URL path is `<name>/-/<file>.tgz`.
+  const name = entry.name ?? path.split('node_modules/').at(-1);
+  if (!entry.resolved.slice(REGISTRY.length).startsWith(`${name}/-/`)) {
+    fail(`package-lock.json: ${path} resolves to a different package than ${name}`);
+  }
   if (typeof entry.integrity !== 'string' || !entry.integrity.startsWith('sha512-')) {
     fail(`package-lock.json: ${path} has no sha512 integrity hash`);
   }
