@@ -27,6 +27,7 @@ import {
   crossrefRequest,
   decodeEntities,
   formatEntry,
+  normalize,
   parseEntries,
   printHeaderHelp,
   searchCrossref,
