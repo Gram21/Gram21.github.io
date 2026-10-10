@@ -23,8 +23,7 @@ more:
 ---
 
 I am a computer scientist (Dr.-Ing.) from Karlsruhe, Germany.
-I earned my doctorate at KIT with the dissertation "Recovering Trace Links in Software Architecture Documentation".
-I am generally interested in programming, especially in Java, Python, and Rust.
+I earned my doctorate at KIT with the dissertation ["Recovering Trace Links in Software Architecture Documentation"](https://ksp.kit.edu/reader/books/pdf/10.5445/KSP/1000191838).
 
 My research lies at the intersection of software engineering, natural language processing (NLP), and software architecture.
 I work on traceability link recovery and inconsistency detection between architecture documentation, models, requirements, and code.
