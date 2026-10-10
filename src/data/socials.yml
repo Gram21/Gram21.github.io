@@ -21,11 +21,13 @@ semanticscholar_id: null
 
 # Anything the fields above do not cover. `icon` may name one of the marks in
 # components/SocialRow.astro — orcid, scholar, dblp, github, codeberg, linkedin,
-# semanticscholar — and without one the entry renders as a text chip instead.
+# semanticscholar, researchgate, kit — and without one the entry renders as a text chip instead.
 extra:
   - label: ResearchGate
+    icon: researchgate
     url: https://www.researchgate.net/profile/Jan-Keim
   - label: KIT
+    icon: kit
     url: https://mcse.kastel.kit.edu/staff_Keim_Jan.php
 
 # Your PGP key fingerprint, no spaces. When set, /pgp-key/ renders it and
