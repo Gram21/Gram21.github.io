@@ -17,6 +17,7 @@ point it at your profile; with that unset the script exits and says so.
 import os
 import signal
 import sys
+import time
 from datetime import date, datetime
 
 try:
@@ -40,12 +41,17 @@ class ScholarUnavailable(Exception):
 
 # Keep this below the workflow's own `timeout` so the script, not SIGKILL, ends
 # the run: Scholar rate-limits hard, and a run that cannot finish is routine.
-TIME_BUDGET_SECONDS: int = int(os.environ.get("SCHOLAR_TIME_BUDGET", "270"))
+TIME_BUDGET_SECONDS: int = int(os.environ.get("SCHOLAR_TIME_BUDGET", "840"))
 
 # Skip the fetch while the committed data is younger than this. A daily schedule
 # with 7 here refreshes weekly, and a rate-limited run leaves the data stale, so
 # the next day simply tries again: at most one Scholar visit per day.
 MIN_AGE_DAYS: int = int(os.environ.get("SCHOLAR_MIN_AGE_DAYS", "1"))
+
+# Attempts at the Scholar request, with a growing pause between them, before
+# the run settles for whatever it has already received.
+ATTEMPTS: int = int(os.environ.get("SCHOLAR_ATTEMPTS", "3"))
+BACKOFF_SECONDS: int = int(os.environ.get("SCHOLAR_BACKOFF", "30"))
 
 
 def load_scholar_user_id() -> str:
@@ -75,6 +81,31 @@ def load_scholar_user_id() -> str:
 
 SCHOLAR_USER_ID: str = load_scholar_user_id()
 OUTPUT_FILE: str = "src/data/citations.yml"
+
+
+def fetch_publications():
+    """Return (publications, complete). `complete` is False when Scholar gave up
+    part-way: the list may then be short or empty, and the caller merges it."""
+    scholarly.set_timeout(15)
+    scholarly.set_retries(3)
+    author = None
+    for attempt in range(1, ATTEMPTS + 1):
+        try:
+            if author is None:
+                author = scholarly.search_author_id(SCHOLAR_USER_ID)
+            # Only the publication list: it carries every count, and each further
+            # section is another request for Scholar to rate-limit. Fills in place,
+            # so a failure after the first page leaves that page in `author`.
+            scholarly.fill(author, sections=["publications"])
+            return author.get("publications", []), True
+        except ScholarUnavailable:
+            break
+        except Exception as e:
+            # Rate limiting surfaces here as MaxTriesExceededException.
+            print(f"Scholar request {attempt}/{ATTEMPTS} failed: {e}")
+            if attempt < ATTEMPTS:
+                time.sleep(BACKOFF_SECONDS * attempt)
+    return (author or {}).get("publications") or [], False
 
 
 def get_scholar_citations() -> None:
@@ -111,36 +142,11 @@ def get_scholar_citations() -> None:
                 f"Warning: Could not read existing citation data from {OUTPUT_FILE}: {e}. The file may be missing or corrupted."
             )
 
-    citation_data = {"metadata": {"last_updated": today}, "papers": {}}
+    previous = (existing_data or {}).get("papers") or {}
+    publications, complete = fetch_publications()
 
-    scholarly.set_timeout(15)
-    scholarly.set_retries(3)
-    try:
-        author = scholarly.search_author_id(SCHOLAR_USER_ID)
-        # Only the publication list: it carries every count, and each further
-        # section is another request for Scholar to rate-limit.
-        author_data = scholarly.fill(author, sections=["publications"])
-    except ScholarUnavailable:
-        raise
-    except Exception as e:
-        # Rate limiting surfaces here as MaxTriesExceededException. Nothing is
-        # wrong with the repo, so leave the committed counts alone and exit clean.
-        print(
-            f"Could not reach Google Scholar for user ID '{SCHOLAR_USER_ID}': {e}. Leaving {OUTPUT_FILE} unchanged; the next scheduled run will retry."
-        )
-        sys.exit(0)
-
-    if not author_data:
-        print(
-            f"Could not fetch author data for user ID '{SCHOLAR_USER_ID}'. Please verify the Scholar user ID and try again."
-        )
-        sys.exit(1)
-
-    if "publications" not in author_data:
-        print(f"No publications found in author data for user ID '{SCHOLAR_USER_ID}'.")
-        sys.exit(1)
-
-    for pub in author_data["publications"]:
+    fetched = {}
+    for pub in publications:
         try:
             pub_id = pub.get("pub_id") or pub.get("author_pub_id")
             if not pub_id:
@@ -155,7 +161,7 @@ def get_scholar_citations() -> None:
 
             print(f"Found: {title} ({year}) - Citations: {citations}")
 
-            citation_data["papers"][pub_id] = {
+            fetched[pub_id] = {
                 "title": title,
                 "year": year,
                 "citations": citations,
@@ -166,6 +172,25 @@ def get_scholar_citations() -> None:
             print(
                 f"Error processing publication '{pub.get('bib', {}).get('title', 'Unknown')}': {e}. This publication will be skipped."
             )
+
+    if complete and not fetched:
+        print(
+            f"No publications found in author data for user ID '{SCHOLAR_USER_ID}'."
+        )
+        sys.exit(1)
+
+    # A complete list is authoritative. A partial one only refreshes the papers
+    # it reached, and `last_updated` stays put so the next run tries again.
+    papers = fetched if complete else {**previous, **fetched}
+    last_updated = today if complete else (existing_data or {}).get("metadata", {}).get("last_updated", today)
+    if not complete:
+        print(
+            f"Scholar answered only in part: refreshed {len(fetched)} paper(s), kept {len(papers) - len(fetched)} from the previous run."
+        )
+        if papers == previous:
+            print(f"Nothing new. Leaving {OUTPUT_FILE} unchanged; the next scheduled run will retry.")
+            return
+    citation_data = {"metadata": {"last_updated": last_updated}, "papers": papers}
 
     # Past the network work: no alarm may interrupt a half-written file.
     signal.alarm(0)

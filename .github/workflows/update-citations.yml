@@ -1,22 +1,25 @@
 # Refresh src/data/citations.yml from Google Scholar weekly, commit it, and
 # redeploy the site.
 #
-# Runs daily, but the script skips the fetch while the data is younger than
-# SCHOLAR_MIN_AGE_DAYS, so Scholar is asked once a week. Scholar rate-limits
-# hard and has no API: a blocked or timed-out run is a success that leaves the
-# data unchanged, and because the data then stays stale, the next day's run
-# retries. A successful fetch always rewrites `last_updated`, even when no
-# count changed, so the retries stop until the next week.
+# Runs every six hours, but the script skips the fetch while the data is younger
+# than SCHOLAR_MIN_AGE_DAYS, so Scholar is asked once a week. Scholar
+# rate-limits hard and has no API: a blocked or timed-out run is a success, and
+# whatever Scholar did return is merged into the file (the rest keeps its last
+# known count). `last_updated` moves only after a complete fetch, so an
+# incomplete one is retried at the next run. The weekly mark then stops the
+# retries.
 #
 # Uses GITHUB_TOKEN, not a PAT. Its push triggers no other workflow, so the
-# last step starts deploy.yml explicitly; workflow_dispatch is the exception
-# GITHUB_TOKEN may trigger. Needs scholar_userid in src/data/socials.yml.
+# last step starts deploy.yml explicitly (workflow_dispatch is the exception
+# GITHUB_TOKEN may trigger). If that fails, the scheduled run of deploy.yml
+# publishes the commit a few hours later. Needs scholar_userid in
+# src/data/socials.yml.
 name: Update Scholar citations
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 4 * * *' # daily, 04:17 UTC; off the hour, when runners are busiest
+    - cron: '17 */6 * * *' # every six hours, off the hour, when runners are busiest
 
 permissions:
   contents: write
@@ -44,12 +47,13 @@ jobs:
       - name: Fetch citations
         run: |
           set +e
-          timeout --signal=TERM --kill-after=30 300 python -u scripts/update_scholar_citations.py
+          timeout --signal=TERM --kill-after=30 900 python -u scripts/update_scholar_citations.py
           code=$?
           # 124/137/143 are the timeout and its signals: Scholar rate-limited
-          # us. Expected, not a failure — leave the data as it is.
+          # us. Expected, not a failure — the script has already written
+          # what it received; the next step commits it.
           if [ $code -eq 124 ] || [ $code -eq 137 ] || [ $code -eq 143 ]; then
-            echo "Scholar did not answer in time; leaving citations.yml unchanged."
+            echo "Scholar did not answer in time."
             exit 0
           fi
           exit $code
@@ -64,7 +68,9 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add src/data/citations.yml
           git commit -m "chore: refresh Scholar citations"
+          git pull --rebase
           git push
-          gh workflow run deploy.yml --ref "$GITHUB_REF_NAME"
+          gh workflow run deploy.yml --ref "$GITHUB_REF_NAME" ||
+            echo "::warning::could not start deploy.yml; the scheduled deploy publishes this commit"
         env:
           GH_TOKEN: ${{ github.token }}
