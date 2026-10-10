@@ -2,10 +2,14 @@
 # keep the result if the site still builds. The checks are the ones deploy.yml
 # runs: formatting, type check, generated docs, build, audit.
 #
+# Only versions at least seven days old are taken, so a freshly published (or
+# hijacked) release is not built and deployed unseen. The checkout keeps no token;
+# only the last step gets one.
+#
 # Two attempts: every update including majors first, then minor and patch
 # updates only. If neither passes, nothing is committed and the run says so.
 # TypeScript stays out of the first attempt: astro check refuses TypeScript 7
-# (see renovate.json), and `npm update` still moves it inside its ^6 range.
+# (see renovate.json).
 #
 # Uses GITHUB_TOKEN, not a PAT. Its push triggers no other workflow, so the last
 # step starts deploy.yml explicitly; if that fails, the scheduled run of
@@ -30,6 +34,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
 
       - uses: actions/setup-node@v7
         with:
@@ -50,9 +56,8 @@ jobs:
           }
           attempt() {
             git checkout -- package.json package-lock.json
-            npx --yes npm-check-updates@23.1.0 -u "$@" &&
+            npx --yes npm-check-updates@23.1.0 --cooldown 7 -u "$@" &&
               npm install &&
-              npm update &&
               verify
           }
           if attempt --reject typescript; then
@@ -72,6 +77,7 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git add package.json package-lock.json
           git commit -m "chore: update dependencies"
           git pull --rebase
