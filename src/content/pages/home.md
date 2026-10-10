@@ -9,6 +9,7 @@ statLabels:
   publications: 'publications'
   citations: 'citations'
   hIndex: 'h-index'
+  i10: 'i10-index'
   projects: 'projects'
   people: 'collaborators'
 # Dates the Scholar-derived figures; {date} is the last refresh.
