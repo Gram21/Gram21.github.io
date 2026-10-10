@@ -49,6 +49,13 @@ for (const [path, entry] of Object.entries(lock.packages ?? {})) {
   if (!entry.resolved.slice(REGISTRY.length).startsWith(`${name}/-/`)) {
     fail(`package-lock.json: ${path} resolves to a different package than ${name}`);
   }
+  for (const group of ['dependencies', 'optionalDependencies', 'peerDependencies']) {
+    for (const [dependency, range] of Object.entries(entry[group] ?? {})) {
+      if (typeof range !== 'string' || !RANGE.test(range)) {
+        fail(`package-lock.json: ${path} depends on ${dependency} by ${JSON.stringify(range)}`);
+      }
+    }
+  }
   if (typeof entry.integrity !== 'string' || !entry.integrity.startsWith('sha512-')) {
     fail(`package-lock.json: ${path} has no sha512 integrity hash`);
   }

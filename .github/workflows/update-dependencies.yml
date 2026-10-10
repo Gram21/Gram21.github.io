@@ -101,9 +101,19 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      # Into its own directory, never the workspace: the artifact comes from a job
+      # that ran package code, and anything it holds beyond the two files below
+      # (a replaced script or workflow, say) is dropped, not extracted over the repository.
       - uses: actions/download-artifact@v8
         with:
           name: dependency-update
+          path: ${{ runner.temp }}/artifact
+
+      - name: Take the two dependency files from the artifact
+        run: |
+          [ "$(ls -A "$RUNNER_TEMP/artifact" | sort | tr '\n' ' ')" = "package-lock.json package.json " ] ||
+            { echo "::error::the artifact holds more or less than the two dependency files"; exit 1; }
+          cp "$RUNNER_TEMP/artifact/package.json" "$RUNNER_TEMP/artifact/package-lock.json" .
 
       # The artifact comes from a job that ran package code, so it is untrusted:
       # scripts/check-dependency-update.mjs, from the repository and not from the
