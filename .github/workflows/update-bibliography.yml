@@ -1,11 +1,17 @@
 # Once a week, ask KITopen for publications of the author that src/data/papers.bib
-# does not list yet, add them as entries, commit, and redeploy the site.
+# does not list yet, and add them as entries.
 #
 # Only articles and conference papers are added; reports, theses and teaching
 # material in KITopen stay out. Add the source id to src/data/papers-ignore.yml
 # to keep a record from being proposed again. A new entry gets an `abbr` when its
 # venue matches a row in src/data/venues.yml; otherwise it has no badge, and you
 # add the venue row and the `abbr` by hand.
+#
+# The changes go into a pull request on the branch `bibliography-update`, not
+# onto the default branch. Merging it publishes them. The repository setting
+# "Allow GitHub Actions to create and approve pull requests" must be on, and the
+# pull request does not start the build checks, because GITHUB_TOKEN pushes start
+# no workflow: run deploy.yml on that branch by hand to check it if you want.
 #
 # Preprints on arXiv are checked too: when one has a published version (arXiv `doi`
 # field or a Crossref title match), its entry becomes that paper. A comment such as
@@ -14,10 +20,7 @@
 # KITopen unreachable is not a failure: the script exits 2 without touching any
 # file, and the next week's run tries again.
 #
-# Uses GITHUB_TOKEN, not a PAT. Its push triggers no other workflow, so the
-# last step starts deploy.yml explicitly; if that fails, the scheduled run of
-# deploy.yml publishes the commit later the same morning. Needs orcid_id in
-# src/data/socials.yml.
+# Uses GITHUB_TOKEN, not a PAT. Needs orcid_id in src/data/socials.yml.
 name: Update bibliography
 
 on:
@@ -27,7 +30,7 @@ on:
 
 permissions:
   contents: write
-  actions: write
+  pull-requests: write
 
 concurrency:
   group: update-bibliography
@@ -72,7 +75,7 @@ jobs:
           fi
           [ $code -le 1 ]
 
-      - name: Commit if changed
+      - name: Open or update the pull request
         run: |
           if git diff --quiet -- src/data/papers.bib src/data/papers-ignore.yml; then
             echo "No change."
@@ -80,11 +83,17 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git switch -C bibliography-update
           git add src/data/papers.bib
           git commit -m "chore: update the bibliography"
-          git pull --rebase
-          git push
-          gh workflow run deploy.yml --ref "$GITHUB_REF_NAME" ||
-            echo "::warning::could not start deploy.yml; the scheduled deploy publishes this commit"
+          # The branch belongs to this workflow: each run rebuilds it from the
+          # default branch, so an open pull request always shows the full change.
+          git push --force origin bibliography-update
+          if [ -z "$(gh pr list --head bibliography-update --state open --json number --jq '.[].number')" ]; then
+            gh pr create --base "$DEFAULT_BRANCH" --head bibliography-update \
+              --title "chore: update the bibliography" \
+              --body "This pull request adds new publications and updates preprint entries in src/data/papers.bib. Check each entry, especially the venue badge (abbr). Merge to publish the changes."
+          fi
         env:
           GH_TOKEN: ${{ github.token }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
