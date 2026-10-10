@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-10-09'
+  last_updated: '2026-10-10'
 papers:
   fC9DrioAAAAJ:-f6ydRqryjwC:
     citations: 46
     title: 'Software architecture meets llms: A systematic literature review'
     year: '2025'
   fC9DrioAAAAJ:0EnyYjriUFMC:
-    citations: 45
+    citations: 46
     title: Evaluation methods and replicability of software architecture research objects
     year: '2022'
   fC9DrioAAAAJ:2osOgNQ5qMEC:
@@ -14,7 +14,7 @@ papers:
     title: Towards consistency analysis between formal and informal software architecture artefacts
     year: '2019'
   fC9DrioAAAAJ:3fE2CSJIrl8C:
-    citations: 9
+    citations: 8
     title: A taxonomy for design decisions in software architecture documentation
     year: '2022'
   fC9DrioAAAAJ:4DMP91E08xMC:
@@ -22,7 +22,7 @@ papers:
     title: Combining Knowledge Graphs and Large Language Models to Ease Knowledge Access in Software Architecture Research.
     year: '2024'
   fC9DrioAAAAJ:4JMBOYKVnBMC:
-    citations: 32
+    citations: 33
     title: A research roadmap for augmenting software engineering processes and software products with generative AI
     year: '2026'
   fC9DrioAAAAJ:4TOpqqG69KYC:
@@ -70,7 +70,7 @@ papers:
     title: Future Research.
     year: '2019'
   fC9DrioAAAAJ:JV2RwH3_ST0C:
-    citations: 0
+    citations: 1
     title: 'AutoPCM: Automated Generation of Architectural Performance Models from Early Design Artifacts using LLM Agents'
     year: '2026'
   fC9DrioAAAAJ:KlAtU1dfN6UC:
@@ -113,6 +113,10 @@ papers:
     citations: 0
     title: Taming Large Language Models via Scripted Interactions
     year: '2025'
+  fC9DrioAAAAJ:RGFaLdJalmkC:
+    citations: 0
+    title: 'SciGraphChat: Retrieval-Augmented Generation over Scientific Knowledge Graphs'
+    year: '2026'
   fC9DrioAAAAJ:RHpTSmoSYBkC:
     citations: 2
     title: A roadmap for tamed interactions with large language models
@@ -162,7 +166,7 @@ papers:
     title: Using bert for the detection of architectural tactics in code
     year: '2020'
   fC9DrioAAAAJ:ZeXyd9-uunAC:
-    citations: 4
+    citations: 5
     title: 'Responsible and Sustainable AI: Considering Energy Consumption in Automated Text Classification Evaluation Tasks'
     year: '2025'
   fC9DrioAAAAJ:Zph67rFs4hoC:
@@ -198,11 +202,11 @@ papers:
     title: "Themenextraktion zur Dom\xE4nenauswahl f\xFCr Programmierung in nat\xFCrlicher Sprache"
     year: '2018'
   fC9DrioAAAAJ:dhFuZR0502QC:
-    citations: 31
+    citations: 32
     title: 'Do large language models contain software architectural knowledge?: An exploratory case study with gpt'
     year: '2025'
   fC9DrioAAAAJ:e5wmG9Sq2KIC:
-    citations: 3
+    citations: 5
     title: 'HubLink: A Novel Question Answering Retrieval Approach over Knowledge Graphs.'
     year: '2025'
   fC9DrioAAAAJ:eQOLeE2rZwMC:
