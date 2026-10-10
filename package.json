@@ -28,6 +28,7 @@
     "bib:check": "python3 scripts/update_bib.py",
     "bib:missing": "node scripts/find-missing-papers.mjs",
     "bib:missing:kitopen": "node scripts/find-missing-papers-kitopen.mjs",
+    "bib:arxiv": "node scripts/update-arxiv-papers.mjs",
     "docs": "node scripts/gen-docs.mjs",
     "docs:check": "node scripts/gen-docs.mjs --check"
   },

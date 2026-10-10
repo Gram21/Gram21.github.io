@@ -7,6 +7,10 @@
 # venue matches a row in src/data/venues.yml; otherwise it has no badge, and you
 # add the venue row and the `abbr` by hand.
 #
+# Preprints on arXiv are checked too: when one has a published version (arXiv `doi`
+# field or a Crossref title match), its entry becomes that paper. A comment such as
+# "accepted at ..." without a DOI is only logged.
+#
 # KITopen unreachable is not a failure: the script exits 2 without touching any
 # file, and the next week's run tries again.
 #
@@ -56,6 +60,18 @@ jobs:
           fi
           [ $code -le 1 ]
 
+      - name: Update arXiv preprints
+        run: |
+          set +e
+          npm run --silent bib:arxiv -- --write
+          code=$?
+          # 0: nothing found. 1: entries updated or reported. 2: arXiv unreachable.
+          if [ $code -eq 2 ]; then
+            echo "::warning::arXiv could not be used; preprint entries are unchanged"
+            exit 0
+          fi
+          [ $code -le 1 ]
+
       - name: Commit if changed
         run: |
           if git diff --quiet -- src/data/papers.bib src/data/papers-ignore.yml; then
@@ -65,7 +81,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add src/data/papers.bib
-          git commit -m "chore: add new publications to the bibliography"
+          git commit -m "chore: update the bibliography"
           git pull --rebase
           git push
           gh workflow run deploy.yml --ref "$GITHUB_REF_NAME" ||

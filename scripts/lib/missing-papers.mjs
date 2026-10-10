@@ -312,7 +312,7 @@ export function findMissing(publications, bibEntries, ignoredIds) {
 export const unescapeDoi = (doi) =>
   doi.replaceAll('\\_', '_').replaceAll('\\&', '&').replaceAll('\\%', '%');
 
-async function crossrefRequest(url, retries = 3) {
+export async function crossrefRequest(url, retries = 3) {
   for (let attempt = 1; attempt <= retries; attempt += 1) {
     try {
       const response = await fetch(url, {
@@ -330,7 +330,7 @@ async function crossrefRequest(url, retries = 3) {
   return null;
 }
 
-function crossrefFields(message, entryType, hasJournal) {
+export function crossrefFields(message, entryType, hasJournal) {
   const fields = {};
   const first = (name) => (Array.isArray(message[name]) ? message[name][0] : message[name]);
   const container = first('container-title');
@@ -371,7 +371,7 @@ export async function crossrefMessageFor(publication, delaySeconds) {
   }
 }
 
-async function searchCrossref(title) {
+export async function searchCrossref(title) {
   const query = encodeURIComponent(title);
   const response = await fetch(
     `https://api.crossref.org/works?rows=3&query.bibliographic=${query}`,
