@@ -3,8 +3,11 @@
 # runs: formatting, type check, generated docs, build, audit.
 #
 # Only versions at least seven days old are taken, so a freshly published (or
-# hijacked) release is not built and deployed unseen. The checkout keeps no token;
-# only the last step gets one.
+# hijacked) release is not built and deployed unseen: ncu picks the version and
+# `npm install --before` stops the lockfile from resolving anything newer. The
+# `update` job runs package code with a read-only token and no credentials. The
+# `publish` job never runs package code: it takes the two changed files from the
+# first job and is the only one that can write.
 #
 # Two attempts: every update including majors first, then minor and patch
 # updates only. If neither passes, nothing is committed and the run says so.
@@ -22,8 +25,7 @@ on:
     - cron: '23 3 * * 2' # Tuesdays, 03:23 UTC
 
 permissions:
-  contents: write
-  actions: write
+  contents: read
 
 concurrency:
   group: update-dependencies
@@ -57,7 +59,7 @@ jobs:
           attempt() {
             git checkout -- package.json package-lock.json
             npx --yes npm-check-updates@23.1.0 --cooldown 7 -u "$@" &&
-              npm install &&
+              npm install --before "$(date -u -d '7 days ago' +%Y-%m-%dT%H:%M:%SZ)" &&
               verify
           }
           if attempt --reject typescript; then
@@ -69,15 +71,44 @@ jobs:
             echo "::warning::no dependency update passed the checks; nothing was changed"
           fi
 
-      - name: Commit if changed
+      - name: Keep the result for the publish job
         run: |
           if git diff --quiet -- package.json package-lock.json; then
             echo "No change."
             exit 0
           fi
+          mkdir "$RUNNER_TEMP/out"
+          cp package.json package-lock.json "$RUNNER_TEMP/out/"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+        id: result
+
+      - uses: actions/upload-artifact@v7
+        if: steps.result.outputs.changed == 'true'
+        with:
+          name: dependency-update
+          path: ${{ runner.temp }}/out
+
+    outputs:
+      changed: ${{ steps.result.outputs.changed }}
+
+  publish:
+    needs: update
+    if: needs.update.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: dependency-update
+
+      - name: Commit and deploy
+        run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git add package.json package-lock.json
           git commit -m "chore: update dependencies"
           git pull --rebase
