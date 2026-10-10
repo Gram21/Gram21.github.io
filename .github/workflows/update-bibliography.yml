@@ -1,0 +1,73 @@
+# Once a week, ask KITopen for publications of the author that src/data/papers.bib
+# does not list yet, add them as entries, commit, and redeploy the site.
+#
+# Only articles and conference papers are added; reports, theses and teaching
+# material in KITopen stay out. Add the source id to src/data/papers-ignore.yml
+# to keep a record from being proposed again. A new entry may still need an
+# `abbr` by hand: the commit message lists the added keys.
+#
+# KITopen unreachable is not a failure: the script exits 2 without touching any
+# file, and the next week's run tries again.
+#
+# Uses GITHUB_TOKEN, not a PAT. Its push triggers no other workflow, so the
+# last step starts deploy.yml explicitly; if that fails, the scheduled run of
+# deploy.yml publishes the commit later the same morning. Needs orcid_id in
+# src/data/socials.yml.
+name: Update bibliography
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '3 5 * * 1' # Mondays, 05:03 UTC
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: update-bibliography
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    env:
+      CROSSREF_MAILTO: ${{ vars.CROSSREF_MAILTO || 'jan.keim@kit.edu' }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Find missing papers
+        run: |
+          set +e
+          npm run --silent bib:missing:kitopen -- --yes --only article,inproceedings | tee "$RUNNER_TEMP/missing.log"
+          code=${PIPESTATUS[0]}
+          # 0: nothing missing. 1: entries added. 2: KITopen unreachable.
+          if [ $code -eq 2 ]; then
+            echo "::warning::KITopen could not be used; papers.bib is unchanged"
+            exit 0
+          fi
+          [ $code -le 1 ]
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- src/data/papers.bib src/data/papers-ignore.yml; then
+            echo "No change."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/papers.bib
+          git commit -m "chore: add new publications to the bibliography"
+          git pull --rebase
+          git push
+          gh workflow run deploy.yml --ref "$GITHUB_REF_NAME" ||
+            echo "::warning::could not start deploy.yml; the scheduled deploy publishes this commit"
+        env:
+          GH_TOKEN: ${{ github.token }}

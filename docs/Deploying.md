@@ -283,31 +283,47 @@ the card it replaced.
 For a per-page image, take an optional `image` prop through `BaseHead` the way
 `title` and `description` already work.
 
-## The two opt-in workflows
+## The opt-in workflows
 
-`update-github-metadata.yml` and `update-citations.yml` refresh
-`src/data/github-metadata.json` and `src/data/citations.yml` and commit the
-result. `update-citations.yml` runs daily and on demand.
-`update-github-metadata.yml` runs on demand and on a push to `master` touching
-`src/data/repositories.yml`; uncomment its `schedule:` block for a weekly run.
+Three workflows keep committed data fresh and commit the result:
 
-Neither needs a secret. Both use the built-in `GITHUB_TOKEN`, with
+| Workflow                 | Data                            | Runs                                       |
+| ------------------------ | ------------------------------- | ------------------------------------------ |
+| `update-github-metadata` | `src/data/github-metadata.json` | On demand; on a push to `repositories.yml` |
+| `update-citations`       | `src/data/citations.yml`        | Every six hours; on demand                 |
+| `update-bibliography`    | `src/data/papers.bib`           | Mondays, 05:03 UTC; on demand              |
+
+None needs a secret. Each uses the built-in `GITHUB_TOKEN`, with
 `contents: write` to commit and `actions: write` to start `deploy.yml`. A push
 made with `GITHUB_TOKEN` triggers no other workflow, so each workflow starts
 the deploy itself with `gh workflow run deploy.yml` after its commit.
 `workflow_dispatch` is the one event `GITHUB_TOKEN` may trigger.
 
-The Scholar one runs daily but fetches only when `citations.yml` is at least
-`SCHOLAR_MIN_AGE_DAYS` (7 on the schedule) old, so Scholar is asked once a
-week. Scholar rate-limits hard and has no API, so a blocked or timed-out run is
-routine: it ends green and leaves the counts unchanged. The data then stays
-stale, so the next day's run retries. A successful fetch always rewrites
-`last_updated`, which stops the retries until the next week. It is also the one piece of tooling that needs pip:
-the workflow pins `python-version: '3.13'` and installs `requirements.txt`, and
-`scholar_userid` must be set in `src/data/socials.yml` or the script exits saying
-so.
+If that start fails, the workflow shows a warning and stays green. `deploy.yml`
+also runs on a schedule (daily, 06:43 UTC). That run publishes the commit about
+two hours after the citations run and the bibliography check at the latest.
 
-Neither is needed to build. Both output files are committed, which is what lets
+The Scholar workflow fetches only when `citations.yml` is at least
+`SCHOLAR_MIN_AGE_DAYS` (7 on the schedule) old, so Scholar is asked once a
+week. Scholar rate-limits hard and has no API, so a blocked run is routine and
+ends green. The script retries the request with a growing pause. If Scholar
+answers only in part, the script merges what it received into the file and
+keeps the last known count for every other paper. It then leaves
+`last_updated` unchanged, so the next run (six hours later) tries again. A
+complete fetch rewrites `last_updated`, which stops the retries until the next
+week. It is also the one piece of tooling that needs pip: the workflow pins
+`python-version: '3.14'` and installs `requirements.txt`, and `scholar_userid`
+must be set in `src/data/socials.yml` or the script exits saying so.
+
+The bibliography workflow runs `npm run bib:missing:kitopen -- --yes --only
+article,inproceedings`. It looks up the author in KITopen by `orcid_id` and adds
+every article and conference paper that `papers.bib` does not list. Add a
+source id to `src/data/papers-ignore.yml` to keep a record out. If KITopen is
+unreachable, the run changes nothing and the next week's run tries again.
+Check `abbr` by hand on a new entry. Use `npm run bib:missing` to search DBLP
+and OpenAlex instead.
+
+None is needed to build. All output files are committed, which is what lets
 a fresh clone build with no network, no token and nothing to rate-limit.
 
 ## Publishing the docs to the wiki

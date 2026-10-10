@@ -6,7 +6,9 @@
  * publications shaped like below) and a thin main.
  *
  * Publication shape: {sourceId, kind, title, authors ("First Last"), year, venue,
- * volume, number, pages, school, doi, arxivId, preprint}.
+ * volume, number, pages, school, doi, arxivId, preprint}, plus optional
+ * `entryType` (forces the BibTeX type), `extraFields` (raw {field: value} to emit)
+ * and `sourcePriority` (Crossref then only fills fields the source left empty).
  */
 import { existsSync, readFileSync, writeFileSync, appendFileSync } from 'node:fs';
 import { createInterface } from 'node:readline/promises';
@@ -419,6 +421,7 @@ export function formatAuthorList(authors) {
 }
 
 export function entryTypeFor(publication, crossrefMessage) {
+  if (publication.entryType) return publication.entryType;
   if (publication.arxivId) return 'misc';
   const crossrefType = crossrefMessage?.type;
   if (crossrefType === 'journal-article') return 'article';
@@ -461,9 +464,13 @@ export function buildFields(publication, crossrefMessage, entryType, source) {
       fields.pages = publication.pages.replaceAll('-', '--').replaceAll('----', '--');
   }
   if (publication.doi) fields.doi = texEscape(publication.doi);
+  for (const [name, value] of Object.entries(publication.extraFields ?? {})) {
+    fields[name] = texEscape(value);
+  }
 
   if (crossrefMessage) {
-    // Crossref has the full venue name and publication date the sources lack.
+    // Crossref has the full venue name and publication date the sources lack. A source
+    // marked sourcePriority keeps its own values and only has its gaps filled.
     const enriched = crossrefFields(crossrefMessage, entryType, entryType === 'article');
     for (const name of [
       'journal',
@@ -477,9 +484,10 @@ export function buildFields(publication, crossrefMessage, entryType, source) {
       'year',
       'month',
     ]) {
+      if (publication.sourcePriority && fields[name]) continue;
       if (enriched[name]) fields[name] = texEscape(enriched[name]);
     }
-    if (crossrefMessage.DOI) {
+    if (crossrefMessage.DOI && !(publication.sourcePriority && fields.doi)) {
       fields.doi = texEscape(crossrefMessage.DOI.toLowerCase());
     }
     if (!fields.journal && !fields.booktitle && publication.venue) {
