@@ -6,4 +6,121 @@
 # `color` is the venue's own brand hex, pasted as-is: VenueBadge.astro mixes it
 # toward white for the label and toward the page for the fill. Do not pre-lighten.
 
-{}
+
+AIRE:
+  name: International Workshop on Artificial Intelligence for Requirements Engineering
+  url: https://conf.researchr.org/series/aire
+  color: '#7B8D8E'
+
+ASE:
+  name: IEEE/ACM International Conference on Automated Software Engineering
+  url: https://conf.researchr.org/series/ase
+  color: '#D35400'
+
+ECSA:
+  name: European Conference on Software Architecture
+  url: https://conf.researchr.org/series/ecsa
+  color: '#5974B3'
+
+ICSA:
+  name: IEEE International Conference on Software Architecture
+  url: https://conf.researchr.org/series/icsa
+  color: '#2E86C1'
+
+ICSA-C:
+  name: IEEE International Conference on Software Architecture, Companion
+  url: https://conf.researchr.org/series/icsa
+  color: '#2E86C1'
+
+ICSE:
+  name: IEEE/ACM International Conference on Software Engineering
+  url: https://conf.researchr.org/series/icse
+  color: '#C0392B'
+
+RE:
+  name: IEEE International Requirements Engineering Conference
+  url: https://conf.researchr.org/series/re
+  color: '#009682'
+
+REW:
+  name: IEEE International Requirements Engineering Conference Workshops
+  url: https://conf.researchr.org/series/re
+  color: '#009682'
+
+REFSQ:
+  name: International Working Conference on Requirements Engineering: Foundation for Software Quality
+  url: https://refsq.org/
+  color: '#00A0B0'
+
+SE:
+  name: Software Engineering (GI Fachtagung)
+  url: https://fachgruppe-se.gi.de/
+  color: '#8E44AD'
+
+EASE:
+  name: International Conference on Evaluation and Assessment in Software Engineering
+  url: https://conf.researchr.org/series/ease
+  color: '#B7950B'
+
+MIESE:
+  name: International Workshop on Methodological Issues with Empirical Studies in Software Engineering
+  url: https://conf.researchr.org/series/icse
+  color: '#A04000'
+
+MSR4SA:
+  name: International Workshop on Mining Software Repositories for Software Architecture
+  url: https://conf.researchr.org/series/ecsa
+  color: '#5974B3'
+
+ECASE:
+  name: International Workshop on Establishing the Community-Wide Infrastructure for Architecture-Based Software Engineering
+  url: https://conf.researchr.org/series/icse
+  color: '#7F8C8D'
+
+HCC:
+  name: IEEE International Conference on Humanized Computing and Communication
+  color: '#16A085'
+
+SEUH:
+  name: Software Engineering im Unterricht der Hochschulen
+  color: '#7D6608'
+
+RAGE-KG:
+  name: International Workshop on Retrieval-Augmented Generation Enabled by Knowledge Graphs
+  url: https://ceur-ws.org/
+  color: '#B03A2E'
+
+IJHCC:
+  name: International Journal of Humanized Computing and Communication
+  color: '#1ABC9C'
+
+STT:
+  name: Softwaretechnik-Trends
+  url: https://fb-swt.gi.de/publikationen/softwaretechnik-trends
+  color: '#6C3483'
+
+TOSEM:
+  name: ACM Transactions on Software Engineering and Methodology
+  url: https://dl.acm.org/journal/tosem
+  color: '#CB4335'
+
+TAAS:
+  name: ACM Transactions on Autonomous and Adaptive Systems
+  url: https://dl.acm.org/journal/taas
+  color: '#2874A6'
+
+TR:
+  name: Technical report
+  color: '#7F8C8D'
+
+BA:
+  name: Bachelor thesis
+  color: '#7F8C8D'
+
+MA:
+  name: Master thesis
+  color: '#7F8C8D'
+
+PhD:
+  name: Doctoral thesis
+  color: '#7F8C8D'
