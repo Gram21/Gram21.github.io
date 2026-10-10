@@ -6,6 +6,12 @@ on:
   pull_request:
     branches: [master]
   workflow_dispatch:
+  # Safety net for the data workflows: a commit pushed with GITHUB_TOKEN starts
+  # no workflow, and their explicit start of this one can fail. This run
+  # publishes such a commit about two hours after the citations run (04:17 UTC)
+  # and the weekly bibliography check (Mondays, 05:00 UTC) at the latest.
+  schedule:
+    - cron: '43 6 * * *'
 
 permissions:
   contents: write
