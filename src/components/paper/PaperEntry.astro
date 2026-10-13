@@ -178,7 +178,8 @@ hasLinks ||= cites > 0;
         )}
         {cites > 0 && (
           <span class="chip cites" title="Citations (Google Scholar)">
-            {words.plural('citations', cites, formatCount(cites))} <small class="src">Google Scholar</small>
+            {words.plural('citations', cites, formatCount(cites))}{' '}
+            <small class="src">Google Scholar</small>
           </span>
         )}
       </div>
