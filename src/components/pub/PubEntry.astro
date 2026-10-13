@@ -115,7 +115,7 @@ const bibId = `bib-${pub.id}`;
       )}
       {cites > 0 && (
         <span class="chip cites" title="Citations (Google Scholar)">
-          {words.plural('citations', cites, formatCount(cites))}
+          {words.plural('citations', cites, formatCount(cites))} <small class="src">Google Scholar</small>
         </span>
       )}
       {pagePath && !compact && (
@@ -210,6 +210,10 @@ const bibId = `bib-${pub.id}`;
   .links .bib-toggle {
     margin: 0 0.4rem 0.4rem 0;
     vertical-align: middle;
+  }
+  .cites .src {
+    font-size: 0.65em;
+    opacity: 0.7;
   }
   .cites {
     border-color: var(--sec-line);

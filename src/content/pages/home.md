@@ -13,7 +13,7 @@ statLabels:
   projects: 'projects'
   people: 'collaborators'
 # Dates the Scholar-derived figures; {date} is the last refresh.
-statNote: '(updated {date})'
+statNote: '(Google Scholar, updated {date})'
 # Under "Get in touch", above the contact rows (src/data/contact.yml).
 intros:
   contact: 'If you want to contact me, please write an email.'
