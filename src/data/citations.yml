@@ -1,8 +1,8 @@
 metadata:
-  last_updated: '2026-10-17'
+  last_updated: '2026-10-24'
 papers:
   fC9DrioAAAAJ:-f6ydRqryjwC:
-    citations: 48
+    citations: 49
     title: 'Software architecture meets llms: A systematic literature review'
     year: '2025'
   fC9DrioAAAAJ:0EnyYjriUFMC:
@@ -42,7 +42,7 @@ papers:
     title: Replication Package of" Evaluation Methods and Replicability of Software Architecture Research Objects"
     year: '2022'
   fC9DrioAAAAJ:9ZlFYXVOiuMC:
-    citations: 43
+    citations: 44
     title: Requirements traceability link recovery via retrieval-augmented generation
     year: '2025'
   fC9DrioAAAAJ:9yKSN-GCB0IC:
@@ -74,7 +74,7 @@ papers:
     title: 'AutoPCM: Automated Generation of Architectural Performance Models from Early Design Artifacts using LLM Agents'
     year: '2026'
   fC9DrioAAAAJ:KlAtU1dfN6UC:
-    citations: 22
+    citations: 23
     title: Establishing a benchmark dataset for traceability link recovery between software architecture documentation and models
     year: '2022'
   fC9DrioAAAAJ:L8Ckcad2t8MC:
@@ -82,7 +82,7 @@ papers:
     title: Recovering Trace Links In Software Architecture Documentation
     year: '2025'
   fC9DrioAAAAJ:LkGwnXOMwfcC:
-    citations: 38
+    citations: 37
     title: Tracelink recovery for software architecture documentation
     year: '2021'
   fC9DrioAAAAJ:M3NEmzRMIkIC:
@@ -122,7 +122,7 @@ papers:
     title: A roadmap for tamed interactions with large language models
     year: '2026'
   fC9DrioAAAAJ:TFP_iSt0sucC:
-    citations: 0
+    citations: 1
     title: 'ExArch: Enabling Architecture Traceability by LLM-based Architecture Component Name Extraction'
     year: '2026'
   fC9DrioAAAAJ:TQgYirikUcIC:
@@ -146,7 +146,7 @@ papers:
     title: Lessons Learned
     year: '2019'
   fC9DrioAAAAJ:WF5omc3nYNoC:
-    citations: 28
+    citations: 29
     title: "Does BERT Understand Code? \u2013 An Exploratory Study On The Detection Of Architectural Tactics In Code"
     year: '2020'
   fC9DrioAAAAJ:Wp0gIr-vW9MC:
@@ -170,7 +170,7 @@ papers:
     title: 'Responsible and Sustainable AI: Considering Energy Consumption in Automated Text Classification Evaluation Tasks'
     year: '2025'
   fC9DrioAAAAJ:Zph67rFs4hoC:
-    citations: 25
+    citations: 26
     title: Detecting inconsistencies in software architecture documentation using traceability link recovery
     year: '2023'
   fC9DrioAAAAJ:_FxGoFyzp5QC:
@@ -186,7 +186,7 @@ papers:
     title: "Supplementary material of \u201CNoRBERT: transfer learning for requirements classification"
     year: '2020'
   fC9DrioAAAAJ:aqlVkmm33-oC:
-    citations: 30
+    citations: 31
     title: Requirements classification for traceability link recovery
     year: '2024'
   fC9DrioAAAAJ:bEWYMUwI8FkC:
@@ -202,7 +202,7 @@ papers:
     title: "Themenextraktion zur Dom\xE4nenauswahl f\xFCr Programmierung in nat\xFCrlicher Sprache"
     year: '2018'
   fC9DrioAAAAJ:dhFuZR0502QC:
-    citations: 36
+    citations: 37
     title: 'Do large language models contain software architectural knowledge?: An exploratory case study with gpt'
     year: '2025'
   fC9DrioAAAAJ:e5wmG9Sq2KIC:
@@ -254,7 +254,7 @@ papers:
     title: Establishing a Benchmark Dataset for Traceability Link Recovery Between
     year: '2023'
   fC9DrioAAAAJ:mVmsd5A6BfQC:
-    citations: 70
+    citations: 71
     title: 'LiSSA: toward generic traceability link recovery through retrieval-augmented generation'
     year: '2025'
   fC9DrioAAAAJ:ns9cj8rnVeAC:
@@ -266,7 +266,7 @@ papers:
     title: ICSA 2025
     year: Unknown Year
   fC9DrioAAAAJ:qxL8FJ1GzNcC:
-    citations: 35
+    citations: 36
     title: Recovering trace links between software documentation and code
     year: '2024'
   fC9DrioAAAAJ:r0BpntZqJG4C:
