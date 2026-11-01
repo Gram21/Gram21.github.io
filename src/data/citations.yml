@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-10-24'
+  last_updated: '2026-11-01'
 papers:
   fC9DrioAAAAJ:-f6ydRqryjwC:
     citations: 49
@@ -22,7 +22,7 @@ papers:
     title: Combining Knowledge Graphs and Large Language Models to Ease Knowledge Access in Software Architecture Research.
     year: '2024'
   fC9DrioAAAAJ:4JMBOYKVnBMC:
-    citations: 33
+    citations: 34
     title: A research roadmap for augmenting software engineering processes and software products with generative AI
     year: '2026'
   fC9DrioAAAAJ:4TOpqqG69KYC:
@@ -42,7 +42,7 @@ papers:
     title: Replication Package of" Evaluation Methods and Replicability of Software Architecture Research Objects"
     year: '2022'
   fC9DrioAAAAJ:9ZlFYXVOiuMC:
-    citations: 44
+    citations: 47
     title: Requirements traceability link recovery via retrieval-augmented generation
     year: '2025'
   fC9DrioAAAAJ:9yKSN-GCB0IC:
@@ -118,7 +118,7 @@ papers:
     title: 'SciGraphChat: Retrieval-Augmented Generation over Scientific Knowledge Graphs'
     year: '2026'
   fC9DrioAAAAJ:RHpTSmoSYBkC:
-    citations: 2
+    citations: 3
     title: A roadmap for tamed interactions with large language models
     year: '2026'
   fC9DrioAAAAJ:TFP_iSt0sucC:
@@ -146,11 +146,11 @@ papers:
     title: Lessons Learned
     year: '2019'
   fC9DrioAAAAJ:WF5omc3nYNoC:
-    citations: 29
+    citations: 30
     title: "Does BERT Understand Code? \u2013 An Exploratory Study On The Detection Of Architectural Tactics In Code"
     year: '2020'
   fC9DrioAAAAJ:Wp0gIr-vW9MC:
-    citations: 31
+    citations: 30
     title: Enabling Architecture Traceability by LLM-based Architecture Component Name Extraction
     year: '2025'
   fC9DrioAAAAJ:Y0pCki6q_DkC:
@@ -186,7 +186,7 @@ papers:
     title: "Supplementary material of \u201CNoRBERT: transfer learning for requirements classification"
     year: '2020'
   fC9DrioAAAAJ:aqlVkmm33-oC:
-    citations: 31
+    citations: 32
     title: Requirements classification for traceability link recovery
     year: '2024'
   fC9DrioAAAAJ:bEWYMUwI8FkC:
@@ -210,7 +210,7 @@ papers:
     title: 'HubLink: A Novel Question Answering Retrieval Approach over Knowledge Graphs.'
     year: '2025'
   fC9DrioAAAAJ:eQOLeE2rZwMC:
-    citations: 337
+    citations: 342
     title: 'Norbert: Transfer learning for requirements classification'
     year: '2020'
   fC9DrioAAAAJ:hC7cP41nSMkC:
@@ -226,7 +226,7 @@ papers:
     title: "Allysson Allex Ara\xFAjo 17 Ana Beatriz Mantovani Bett 1 Angelika Kaplan 57, 70"
     year: Unknown Year
   fC9DrioAAAAJ:hqOjcs7Dif8C:
-    citations: 35
+    citations: 36
     title: Introducing an evaluation method for taxonomies
     year: '2022'
   fC9DrioAAAAJ:iH-uZ7U-co4C:
@@ -254,7 +254,7 @@ papers:
     title: Establishing a Benchmark Dataset for Traceability Link Recovery Between
     year: '2023'
   fC9DrioAAAAJ:mVmsd5A6BfQC:
-    citations: 71
+    citations: 75
     title: 'LiSSA: toward generic traceability link recovery through retrieval-augmented generation'
     year: '2025'
   fC9DrioAAAAJ:ns9cj8rnVeAC:
