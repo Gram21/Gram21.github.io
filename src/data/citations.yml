@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-11-01'
+  last_updated: '2026-11-08'
 papers:
   fC9DrioAAAAJ:-f6ydRqryjwC:
     citations: 49
@@ -22,7 +22,7 @@ papers:
     title: Combining Knowledge Graphs and Large Language Models to Ease Knowledge Access in Software Architecture Research.
     year: '2024'
   fC9DrioAAAAJ:4JMBOYKVnBMC:
-    citations: 34
+    citations: 36
     title: A research roadmap for augmenting software engineering processes and software products with generative AI
     year: '2026'
   fC9DrioAAAAJ:4TOpqqG69KYC:
@@ -42,7 +42,7 @@ papers:
     title: Replication Package of" Evaluation Methods and Replicability of Software Architecture Research Objects"
     year: '2022'
   fC9DrioAAAAJ:9ZlFYXVOiuMC:
-    citations: 47
+    citations: 50
     title: Requirements traceability link recovery via retrieval-augmented generation
     year: '2025'
   fC9DrioAAAAJ:9yKSN-GCB0IC:
@@ -58,7 +58,7 @@ papers:
     title: 'The ARDoCo Tool Landscape: REST API, TraceView, and TraceViz for Architecture Traceability'
     year: '2026'
   fC9DrioAAAAJ:HDshCWvjkbEC:
-    citations: 9
+    citations: 10
     title: 'Beyond retrieval: A study of using llm ensembles for candidate filtering in requirements traceability'
     year: '2025'
   fC9DrioAAAAJ:IWHjjKOFINEC:
@@ -74,7 +74,7 @@ papers:
     title: 'AutoPCM: Automated Generation of Architectural Performance Models from Early Design Artifacts using LLM Agents'
     year: '2026'
   fC9DrioAAAAJ:KlAtU1dfN6UC:
-    citations: 23
+    citations: 24
     title: Establishing a benchmark dataset for traceability link recovery between software architecture documentation and models
     year: '2022'
   fC9DrioAAAAJ:L8Ckcad2t8MC:
@@ -115,7 +115,7 @@ papers:
     year: '2025'
   fC9DrioAAAAJ:RGFaLdJalmkC:
     citations: 1
-    title: 'SciGraphChat: Retrieval-Augmented Generation over Scientific Knowledge Graphs'
+    title: 'Scigraphchat: Retrieval-augmented generation over scientific knowledge graphs'
     year: '2026'
   fC9DrioAAAAJ:RHpTSmoSYBkC:
     citations: 3
@@ -138,7 +138,7 @@ papers:
     title: "Aguilar, Paulo AC 93 Aktouf, Oum-El-Kheir 12 Aldenhoven, C\xE9line Madeleine 117 Aleti, Aldeida 35"
     year: Unknown Year
   fC9DrioAAAAJ:UeHWp8X0CEIC:
-    citations: 50
+    citations: 51
     title: Managed software evolution
     year: '2019'
   fC9DrioAAAAJ:W7OEmFMy1HYC:
@@ -150,7 +150,7 @@ papers:
     title: "Does BERT Understand Code? \u2013 An Exploratory Study On The Detection Of Architectural Tactics In Code"
     year: '2020'
   fC9DrioAAAAJ:Wp0gIr-vW9MC:
-    citations: 30
+    citations: 33
     title: Enabling Architecture Traceability by LLM-based Architecture Component Name Extraction
     year: '2025'
   fC9DrioAAAAJ:Y0pCki6q_DkC:
@@ -186,7 +186,7 @@ papers:
     title: "Supplementary material of \u201CNoRBERT: transfer learning for requirements classification"
     year: '2020'
   fC9DrioAAAAJ:aqlVkmm33-oC:
-    citations: 32
+    citations: 34
     title: Requirements classification for traceability link recovery
     year: '2024'
   fC9DrioAAAAJ:bEWYMUwI8FkC:
@@ -238,7 +238,7 @@ papers:
     title: 'Architecture in the Cradle: Early Warning of Architectural Decay with ArchGuard'
     year: '2026'
   fC9DrioAAAAJ:j3f4tGmQtD8C:
-    citations: 8
+    citations: 9
     title: "Who\u2019s Who? LLM-assisted Software Traceability with Architecture Entity Recognition"
     year: '2025'
   fC9DrioAAAAJ:kNdYIx-mwKoC:
@@ -254,7 +254,7 @@ papers:
     title: Establishing a Benchmark Dataset for Traceability Link Recovery Between
     year: '2023'
   fC9DrioAAAAJ:mVmsd5A6BfQC:
-    citations: 75
+    citations: 80
     title: 'LiSSA: toward generic traceability link recovery through retrieval-augmented generation'
     year: '2025'
   fC9DrioAAAAJ:ns9cj8rnVeAC:
