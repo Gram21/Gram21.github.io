@@ -11,7 +11,10 @@ import { execSync } from 'node:child_process';
 
 const REGISTRY = 'https://registry.npmjs.org/';
 // A plain semver range: no git, URL, file, tag or alias specs.
-const RANGE = /^[~^<>=\s\d.x*|-]+(?:-[\w.]+)?$/;
+const COMPARATOR = String.raw`[~^<>=]*\s*v?(?:\d+|[xX*])(?:\.(?:\d+|[xX*])){0,2}(?:-[\w.-]+)?(?:\+[\w.-]+)?`;
+const RANGE = new RegExp(
+  `^\\s*${COMPARATOR}(?:(?:\\s*\\|\\|\\s*|\\s+(?:-\\s+)?)${COMPARATOR})*\\s*$`,
+);
 const GROUPS = ['dependencies', 'devDependencies', 'optionalDependencies', 'peerDependencies'];
 
 const fail = (message) => {
