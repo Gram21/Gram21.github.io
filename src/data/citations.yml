@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-11-15'
+  last_updated: '2026-11-22'
 papers:
   fC9DrioAAAAJ:-f6ydRqryjwC:
-    citations: 52
+    citations: 54
     title: 'Software architecture meets llms: A systematic literature review'
     year: '2025'
   fC9DrioAAAAJ:0EnyYjriUFMC:
-    citations: 46
+    citations: 45
     title: Evaluation methods and replicability of software architecture research objects
     year: '2022'
   fC9DrioAAAAJ:2osOgNQ5qMEC:
@@ -14,7 +14,7 @@ papers:
     title: Towards consistency analysis between formal and informal software architecture artefacts
     year: '2019'
   fC9DrioAAAAJ:3fE2CSJIrl8C:
-    citations: 9
+    citations: 7
     title: A taxonomy for design decisions in software architecture documentation
     year: '2022'
   fC9DrioAAAAJ:4DMP91E08xMC:
@@ -22,7 +22,7 @@ papers:
     title: Combining Knowledge Graphs and Large Language Models to Ease Knowledge Access in Software Architecture Research.
     year: '2024'
   fC9DrioAAAAJ:4JMBOYKVnBMC:
-    citations: 36
+    citations: 38
     title: A research roadmap for augmenting software engineering processes and software products with generative AI
     year: '2026'
   fC9DrioAAAAJ:4TOpqqG69KYC:
@@ -42,7 +42,7 @@ papers:
     title: Replication Package of" Evaluation Methods and Replicability of Software Architecture Research Objects"
     year: '2022'
   fC9DrioAAAAJ:9ZlFYXVOiuMC:
-    citations: 51
+    citations: 53
     title: Requirements traceability link recovery via retrieval-augmented generation
     year: '2025'
   fC9DrioAAAAJ:9yKSN-GCB0IC:
@@ -58,7 +58,7 @@ papers:
     title: 'The ARDoCo Tool Landscape: REST API, TraceView, and TraceViz for Architecture Traceability'
     year: '2026'
   fC9DrioAAAAJ:HDshCWvjkbEC:
-    citations: 11
+    citations: 12
     title: 'Beyond retrieval: A study of using llm ensembles for candidate filtering in requirements traceability'
     year: '2025'
   fC9DrioAAAAJ:IWHjjKOFINEC:
@@ -82,7 +82,7 @@ papers:
     title: Recovering Trace Links In Software Architecture Documentation
     year: '2025'
   fC9DrioAAAAJ:LkGwnXOMwfcC:
-    citations: 38
+    citations: 37
     title: Tracelink recovery for software architecture documentation
     year: '2021'
   fC9DrioAAAAJ:M3NEmzRMIkIC:
@@ -90,7 +90,7 @@ papers:
     title: Dataset for" Evaluation Methods and Replicability of Software Architecture Research Objects"
     year: '2022'
   fC9DrioAAAAJ:M3ejUd6NZC8C:
-    citations: 4
+    citations: 3
     title: Automated reverse engineering of the technology-induced software system structure
     year: '2023'
   fC9DrioAAAAJ:MXK_kJrjxJIC:
@@ -130,7 +130,7 @@ papers:
     title: 'LLMs for Software Architecture Knowledge: A Comparative Analysis Among Seven LLMs'
     year: '2025'
   fC9DrioAAAAJ:Tyk-4Ss8FVUC:
-    citations: 5
+    citations: 4
     title: Unsupervised multi-topic labeling for spoken utterances
     year: '2019'
   fC9DrioAAAAJ:ULOm3_A8WrAC:
@@ -146,11 +146,11 @@ papers:
     title: Lessons Learned
     year: '2019'
   fC9DrioAAAAJ:WF5omc3nYNoC:
-    citations: 30
+    citations: 29
     title: "Does BERT Understand Code? \u2013 An Exploratory Study On The Detection Of Architectural Tactics In Code"
     year: '2020'
   fC9DrioAAAAJ:Wp0gIr-vW9MC:
-    citations: 34
+    citations: 35
     title: Enabling Architecture Traceability by LLM-based Architecture Component Name Extraction
     year: '2025'
   fC9DrioAAAAJ:Y0pCki6q_DkC:
@@ -202,7 +202,7 @@ papers:
     title: "Themenextraktion zur Dom\xE4nenauswahl f\xFCr Programmierung in nat\xFCrlicher Sprache"
     year: '2018'
   fC9DrioAAAAJ:dhFuZR0502QC:
-    citations: 37
+    citations: 38
     title: 'Do large language models contain software architectural knowledge?: An exploratory case study with gpt'
     year: '2025'
   fC9DrioAAAAJ:e5wmG9Sq2KIC:
@@ -226,7 +226,7 @@ papers:
     title: "Allysson Allex Ara\xFAjo 17 Ana Beatriz Mantovani Bett 1 Angelika Kaplan 57, 70"
     year: Unknown Year
   fC9DrioAAAAJ:hqOjcs7Dif8C:
-    citations: 36
+    citations: 35
     title: Introducing an evaluation method for taxonomies
     year: '2022'
   fC9DrioAAAAJ:iH-uZ7U-co4C:
@@ -238,7 +238,7 @@ papers:
     title: 'Architecture in the Cradle: Early Warning of Architectural Decay with ArchGuard'
     year: '2026'
   fC9DrioAAAAJ:j3f4tGmQtD8C:
-    citations: 9
+    citations: 10
     title: "Who\u2019s Who? LLM-assisted Software Traceability with Architecture Entity Recognition"
     year: '2025'
   fC9DrioAAAAJ:kNdYIx-mwKoC:
@@ -254,7 +254,7 @@ papers:
     title: Establishing a Benchmark Dataset for Traceability Link Recovery Between
     year: '2023'
   fC9DrioAAAAJ:mVmsd5A6BfQC:
-    citations: 81
+    citations: 84
     title: 'LiSSA: toward generic traceability link recovery through retrieval-augmented generation'
     year: '2025'
   fC9DrioAAAAJ:ns9cj8rnVeAC:
@@ -266,7 +266,7 @@ papers:
     title: ICSA 2025
     year: Unknown Year
   fC9DrioAAAAJ:qxL8FJ1GzNcC:
-    citations: 36
+    citations: 35
     title: Recovering trace links between software documentation and code
     year: '2024'
   fC9DrioAAAAJ:r0BpntZqJG4C:
